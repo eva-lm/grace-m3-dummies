@@ -1,0 +1,87 @@
+.folded__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 0 20px;
+}
+
+.share {
+  &__box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $borderLine;
+    cursor: pointer;
+  }
+
+  &__box__position {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: $fontMain;
+    font-weight: bold;
+    color: $secondary-color;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  &__button {
+    width: 100%;
+    border-bottom: 1px solid $borderLine;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button--orange {
+    width: 199px;
+    height: 50px;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+    background-color: $dull-orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-style: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+
+  &__button--grey {
+    width: 199px;
+    height: 50px;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-style: none;
+    margin-bottom: 40px;
+    background-color: #d5d5d5;
+  }
+
+  &__button--orange--text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+  }
+
+  &__button--orange--icon {
+    color: white;
+    font-size: 22px;
+  }
+}
+
+.fa-share-alt--share {
+  color: $dull-orange;
+}
+
+.fa-angle-down--up {
+  font-size: 20px;
+  color: $secondary-color;
+}

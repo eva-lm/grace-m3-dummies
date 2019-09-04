@@ -1,0 +1,355 @@
+.viewer {
+  &__container-background {
+    min-width: 320px;
+    height: 457px;
+    //background: linear-gradient(#bfcdd0, #dde9ed);
+    /*background: linear-gradient(
+      0deg,
+      rgba(169, 214, 178, 1) 0%,
+      rgba(201, 242, 210, 1) 100%
+    );
+    background-image: linear-gradient(
+      to left top,
+      #bfcdd0,
+      #afd3d3,
+      #a2d8ce,
+      #9ddcc2,
+      #a2deaf
+    );*/
+    background-image: radial-gradient(
+      circle,
+      #f9f4dc,
+      #eaedcb,
+      #d7e8be,
+      #bfe3b4,
+      #a2deaf
+    );
+    /*background-image: radial-gradient(
+      circle,
+      #f9f4dc,
+      #e2edd9,
+      #d1e3d8,
+      #c5d9d6,
+      #bfcdd0
+    );*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__container-buttom-image {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  &__buttom {
+    width: 75px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  &__buttom-reset {
+    font-family: $fontMain;
+    font-size: 12px;
+    line-height: 20px;
+    color: $secondary-color;
+  }
+
+  &__image-container {
+    width: 240px;
+    height: 329px;
+    background: white;
+    box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.75);
+    border-radius: 2px;
+  }
+
+  &__image-title {
+    display: flex;
+    flex-direction: row;
+    margin-top: 23px;
+    margin-bottom: 10px;
+  }
+
+  &__image-line {
+    width: 5px;
+    height: 42px;
+    background: $dirty-blue;
+  }
+
+  &__image-line-color2 {
+    width: 5px;
+    height: 42px;
+    background: $dirty-red;
+  }
+  &__image-line-color3 {
+    width: 5px;
+    height: 42px;
+    background: $yellow-mustard;
+  }
+  &__image-line-color4 {
+    width: 5px;
+    height: 42px;
+    background: $greenish-grey;
+  }
+  &__image-line-color5 {
+    width: 5px;
+    height: 42px;
+    background: $pale-purple;
+  }
+  &__image-line-color6 {
+    width: 5px;
+    height: 42px;
+    background: $medium-purple;
+  }
+
+  &__image-name {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $dirty-blue;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+
+  &__image-name-color2 {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $dirty-red;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+  &__image-name-color3 {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $yellow-mustard;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+  &__image-name-color4 {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $greenish-grey;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+  &__image-name-color5 {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $pale-purple;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+  &__image-name-color6 {
+    font-family: $fontCard;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+    color: $medium-purple;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 2px;
+  }
+
+  &__image-profession {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $secondary-color;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+
+  &__image-profession-color2 {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $maroon;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+  &__image-profession-color3 {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $dark-green;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+  &__image-profession-color4 {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $blue-jean;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+  &__image-profession-color5 {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $dark-red;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+  &__image-profession-color6 {
+    font-family: $fontCard;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 16px;
+    color: $dark-violet;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 2px;
+  }
+
+  &__profile-picture {
+    width: 240px;
+    height: 200px;
+    //background-image: url("../images/natalie-portman.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  &__icon-style {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $hospital-green;
+    color: $secondary-color;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-style-color2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $dark-orange;
+    color: $maroon;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-style-color3 {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $pale-blue;
+    color: $dark-green;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icon-style-color4 {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $light-yellow;
+    color: $blue-jean;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icon-style-color5 {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $light-orange;
+    color: $dark-red;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icon-style-color6 {
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    border: 2px solid $light-purple;
+    color: $dark-violet;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-style a {
+    color: $secondary-color;
+  }
+  &__icon-style-color2 a,
+  __icon-style a {
+    color: $maroon;
+  }
+  &__icon-style-color3 a {
+    color: $dark-green;
+  }
+  &__icon-style-color4 a {
+    color: $blue-jean;
+  }
+  &__icon-style-color5 a {
+    color: $dark-red;
+  }
+  &__icon-style-color6 a {
+    color: $dark-violet;
+  }
+}
+
+.fa-trash-alt {
+  font-size: 12px;
+  color: $secondary-color;
+  margin-right: 10px;
+}
+
+@media all and (min-width: $tabletSize) {
+  .viewer {
+    &__container-background {
+      margin-top: 20px;
+      height: 75vh;
+      border-radius: 6px;
+      background: opacify($color: transparent, $amount: 0);
+    }
+  }
+}
