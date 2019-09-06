@@ -1,16 +1,16 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "../stylesheets/App.scss";
-import Header from "./Header_landing";
-import Footer from "./Footer";
+import header from "./Header_landing";
+import footer from "./Footer";
 
-function App() {
+function Landing() {
   return (
     <div className="App">
-      <Header />
-      <Footer />
+      {header}
+      {footer}
     </div>
   );
 }
 
-export default App;
+export default Landing;
