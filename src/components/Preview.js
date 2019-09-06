@@ -1,5 +1,5 @@
 import React from "react";
-const imagePath = "../images/natalie-portman.jpg";
+import defaultImage from "../images/natalie-portman.jpg";
 
 class Preview extends React.Component {
   render() {
@@ -23,8 +23,8 @@ class Preview extends React.Component {
               </div>
               <img
                 class="viewer__profile-picture js__profile-image"
-                alt="default image"
-                src={imagePath}
+                alt="user image"
+                src={defaultImage}
               />
               <div class="viewer__icons">
                 <div class="viewer__icon-style">
