@@ -1,7 +1,7 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "../stylesheets/App.scss";
-import footer from "./footer";
+import Footer from "./Footer";
 import Preview from "./Preview";
 import Design from "./Design";
 import Form from "./Form";
@@ -14,7 +14,7 @@ class App extends React.Component {
         <Preview />
         <Design />
         <Form />
-        {footer}
+        {Footer}
         <Share />
       </div>
     );
