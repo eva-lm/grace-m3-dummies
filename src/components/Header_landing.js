@@ -22,7 +22,7 @@ const Header = () => {
         </div>
       </div>
       <button className="header__btn">
-        <a className="header__link" href="./work-space.html">
+        <a className="header__link" href="#">
           comenzar
         </a>
       </button>
