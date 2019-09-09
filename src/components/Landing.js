@@ -4,13 +4,13 @@ import "../stylesheets/App.scss";
 import header from "./Header_landing";
 import footer from "./Footer";
 
-function Landing() {
+const Landing = () => {
   return (
     <div className="App">
       {header}
       {footer}
     </div>
   );
-}
+};
 
 export default Landing;
