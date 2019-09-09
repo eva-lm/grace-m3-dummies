@@ -1,10 +1,12 @@
 import React from "react";
+import Design_color from "./Design_color";
 
 class Design extends React.Component {
+  
   render() {
     return (
-      <section className="design">
-        <div className="design__box">
+      <section className="design js-collapsable">
+        <div className="design__box js-collapsable-header">
           <div className="form__box__position">
             <i className="far fa-object-ungroup fa-object-ungroup--design"></i>
             <h2 className="design__title">DISEÑA</h2>
@@ -15,20 +17,13 @@ class Design extends React.Component {
           <div className="design__form ">
             <h3 className="design__subtitle">COLORES</h3>
             <div className="design__form--items">
-              <label for="design1" className="color__box">
-                <input
-                  className="form__item"
-                  type="radio"
-                  value="color1"
-                  name="design"
-                  id="design1"
-                />
-                <label for="design1" className="radio_btn"></label>
-                <div className="color__one--one"></div>
-                <div className="color__two--one"></div>
-                <div className="color__three--one"></div>
-              </label>
-              <label for="design2" className="color__box">
+              <Design_color for="design1" value="color1" id="color1" number="one"/>
+              <Design_color for="design2" value="color2" id="color2" number="two"/>
+              <Design_color for="design3" value="color3" id="color3" number="three"/>
+              <Design_color for="design4" value="color4" id="color4" number="four"/>
+              <Design_color for="design5" value="color5" id="color5" number="five"/>
+              <Design_color for="design6" value="color6" id="color6" number="six"/>
+              {/* <label for="design2" className="color__box">
                 <input
                   className="form__item"
                   type="radio"
@@ -92,7 +87,7 @@ class Design extends React.Component {
                 <div className="color__one--six"></div>
                 <div className="color__two--six"></div>
                 <div className="color__three--six"></div>
-              </label>
+              </label> */}
             </div>
           </div>
         </div>
