@@ -1,16 +1,23 @@
 import React from "react";
-// import logo from "./logo.svg";
 import "../stylesheets/App.scss";
-import Header from "./Header_landing";
 import Footer from "./Footer";
+import Preview from "./Preview";
+import Design from "./Design";
+import Form from "./Form";
+import Share from "./Share";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Preview />
+        <Design />
+        <Form />
+        {Footer}
+        <Share />
+      </div>
+    );
+  }
 }
 
 export default App;
