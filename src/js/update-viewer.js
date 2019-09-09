@@ -34,30 +34,22 @@ function upgradeJob() {
 
 function upgradeTel() {
   for (let a = 0; a < iconsCheck.length; a++) {}
-  iconsCheck[0].innerHTML = `<a href="tel:${
-    tel.value
-  }" target="_blank"><i class="fas fa-mobile-alt"></i></a>`;
+  iconsCheck[0].innerHTML = `<a href="tel:${tel.value}" target="_blank"><i class="fas fa-mobile-alt"></i></a>`;
 }
 
 function upgradeMail() {
   for (let a = 0; a < iconsCheck.length; a++) {}
-  iconsCheck[1].innerHTML = `<a href="mailto:${
-    mail.value
-  }" target="_blank"><i class="far fa-envelope"></i></a>`;
+  iconsCheck[1].innerHTML = `<a href="mailto:${mail.value}" target="_blank"><i class="far fa-envelope"></i></a>`;
 }
 
 function upgradeLinkedin() {
   for (let a = 0; a < iconsCheck.length; a++) {}
-  iconsCheck[2].innerHTML = `<a href="https://www.linkedin.com/in/${
-    linkedin.value
-  }" target="_blank"><i class="fab fa-linkedin-in"></i></a>`;
+  iconsCheck[2].innerHTML = `<a href="https://www.linkedin.com/in/${linkedin.value}" target="_blank"><i class="fab fa-linkedin-in"></i></a>`;
 }
 
 function upgradeGithub() {
   for (let a = 0; a < iconsCheck.length; a++) {}
-  iconsCheck[3].innerHTML = `<a href="https://github.com/${
-    github.value
-  }" target="_blank"><i class="fab fa-github-alt"></i></a>`;
+  iconsCheck[3].innerHTML = `<a href="https://github.com/${github.value}" target="_blank"><i class="fab fa-github-alt"></i></a>`;
 }
 
 let srcPhoto;
@@ -182,7 +174,7 @@ function createCard(ev) {
         "href",
         `https://twitter.com/intent/tweet?text=${data.cardURL}`
       );
-      shareMessage.classList.remove("hidden");
+      shareMessage.classList.remove("");
     });
 }
 
