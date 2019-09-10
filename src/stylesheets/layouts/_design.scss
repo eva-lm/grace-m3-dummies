@@ -1,8 +1,9 @@
-/* .content {
+// CLASE PARA LOS COLLAPSABLES
+.content {
   width: 100%;
   display: none;
 }
- */
+
 .js-collapsable.open .content {
   width: 100%;
   display: block;
