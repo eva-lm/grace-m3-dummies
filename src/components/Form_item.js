@@ -2,10 +2,10 @@ import React from "react";
 
 const Item = props => (
   <div>
-    <label htmlFor={props.name} className="folded__form__label">
+    <label htmlFor={props.key} className="folded__form__label">
       {props.label}
     </label>
-    <input placeholder="Ej: Sally Jill" id={props.name} type="text" name={props.name} className={`folded__form__input ${props.inputClassName}`} maxlength="20" required />
+    <input placeholder={props.placeholder} id={props.key} type={props.type} name={props.key} className={`folded__form__input ${props.inputClassName}`} maxlength="20" required={props.required} />
   </div>
 );
 

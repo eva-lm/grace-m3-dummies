@@ -14,14 +14,10 @@ class Form extends React.Component {
         </div>
         <div class="content">
           <div class="folded__form js-form">
-            <Item label="Nombre completo" name="fullName" inputClassName="inputName"></Item>
+            <Item key="fullName" type="text" label="Nombre completo" placeholder="Ej: Sally Jill" inputClassName="inputName" required="required"></Item>
 
-            <label for="fullName" class="folded__form__label" id="fullName"></label>
-            <input placeholder="Ej: Sally Jill" id="fullName" type="text" name="fullName" class="folded__form__input inputName" maxlength="20" required />
-            <label for="profession" class="folded__form__label">
-              Puesto
-            </label>
-            <input placeholder="Ej: Front-end unicorn" id="profession" type="text" name="profession" class="folded__form__input inputJob" maxlength="25" required />
+            <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
+
             <label for="image" class="folded__form__label">
               Imagen de perfil
             </label>
@@ -34,22 +30,13 @@ class Form extends React.Component {
               <div class="folded__form__input2 js__profile-preview"></div>
             </div>
 
-            <label for="emailAddress" class="folded__form__label">
-              Correo electrónico
-            </label>
-            <input placeholder="Ej: sally-hill@gmail.com" type="email" id="emailAddress" name="emailAddress" class="folded__form__input mail" required />
-            <label for="telephone" class="folded__form__label">
-              Teléfono
-            </label>
-            <input placeholder="Ej: 555-55-55-55" type="tel" id="telephone" name="telephone" class="folded__form__input tel" />
-            <label for="Linkedin" class="folded__form__label">
-              Linkedin
-            </label>
-            <input placeholder="Ej: sally-hill" id="Linkedin" type="text" name="Linkedin" class="folded__form__input linkedin" required />
-            <label for="Github" class="folded__form__label">
-              Github
-            </label>
-            <input placeholder="Ej: sally-hill" type="text" id="Github" name="Github" class="folded__form__input Github" required />
+            <Item key="emailAddress" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required"></Item>
+
+            <Item key="telephone" type="tel" label="Teléfono electrónico" placeholder="Ej: 555-55-55-55" inputClassName="tel"></Item>
+
+            <Item key="Linkedin" type="text" label="Linkedin" placeholder="Ej: sally-hill" inputClassName="linkedin" required="required"></Item>
+
+            <Item key="Github" type="text" label="Github" placeholder="Ej: sally-hill" inputClassName="Github" required="required"></Item>
           </div>
         </div>
       </section>
