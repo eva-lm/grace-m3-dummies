@@ -4,7 +4,7 @@ import Item from "./Form_item";
 class Form extends React.Component {
   render() {
     return (
-      <div class="folded__form js-form">
+      <div className="folded__form js-form">
         <Item
           key="fullName"
           type="text"
@@ -13,21 +13,21 @@ class Form extends React.Component {
           inputClassName="inputName"
           required="required"
           //value={this.props.userInfo.fullName}
-          onChange={this.props.action}
+          action={this.props.action}
         ></Item>
 
         <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
 
-        <label forHtml="image" class="folded__form__label">
+        <label htmlFor="image" className="folded__form__label">
           Imagen de perfil
         </label>
 
-        <div class="folded__form__section">
-          <buttton for="image" class="folded__form__btnAdd js__profile-trigger">
+        <div className="folded__form__section">
+          <buttton htmlFor="image" className="folded__form__btnAdd js__profile-trigger">
             Añadir Imagen
           </buttton>
-          <input type="file" name="image" id="image" class="folded__form__inputFile js__profile-upload-btn" required />
-          <div class="folded__form__input2 js__profile-preview"></div>
+          <input type="file" name="image" id="image" className="folded__form__inputFile js__profile-upload-btn" required />
+          <div className="folded__form__input2 js__profile-preview"></div>
         </div>
 
         <Item key="emailAddress" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required"></Item>

@@ -3,6 +3,7 @@ import defaultImage from "../images/natalie-portman.jpg";
 
 class Preview extends React.Component {
   render() {
+    console.log({ props });
     return (
       <section className="viewer">
         <div className="viewer__container-background">
@@ -16,7 +17,7 @@ class Preview extends React.Component {
                 <div className="viewer__image-title">
                   <div className="viewer__image-line"></div>
                   <div className="viewer__image-text">
-                    <h2 className="viewer__image-name js-Name"> Nombre Completo{this.props.userInfo.fullName}</h2>
+                    <h2 className="viewer__image-name js-Name">{this.props.userInfo.fullName}</h2>
                     <h3 className="viewer__image-profession js-Job">Front-end developer</h3>
                   </div>
                 </div>
@@ -43,5 +44,11 @@ class Preview extends React.Component {
     );
   }
 }
+
+Preview.defaultProps = {
+  userInfo: {
+    fullName: "Nombre Completo"
+  }
+};
 
 export default Preview;

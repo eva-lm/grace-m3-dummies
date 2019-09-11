@@ -11,25 +11,26 @@ import Collapsible from "./Collapsible";
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       userInfo: {
         fullName: "",
         profession: "",
         // image: userProfile,
         emailAddress: "",
-        // telephone: ,//Quiero poner un número
+        telephone: "",
         Linkedin: "",
         Github: ""
       }
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
+    console.log(inputValue, id);
     this.setState((prevState, props) => {
-      const newUser = { ...prevState.userInfo };
-      newUser[id] = inputValue;
-      this.saveData(newUser);
+      const newUser = { ...prevState.userInfo, [id]: inputValue };
       console.log(newUser);
       return { userInfo: newUser };
     });
