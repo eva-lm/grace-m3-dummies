@@ -16,28 +16,7 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick() {
-  //   console.log('pasoooo de tu cara')
-  //   this.setState((prevState, props) => ({
-  //     collapsible: prevState.collapsible === 'content' ? 'js-collapsable.open' : 'content'
-  //   }));
-  // }
-
-  // render() {
-  //   return (
-  //     <div className="App">
-  //       <Preview />
-  //       <Design collapsible={this.state.collapsible} onClick={this.handleClick} />
-  //       <Design />
-  //       <Form />
-  //       <Footer />
-  //       <Share />
-  //     </div>
-  //   );
-  // }
-
   handleClick() {
-    console.log("pasoooo de tu cara");
     this.setState((prevState, props) => ({
       collapsible: prevState.collapsible === "" ? "js-collapsable.open" : ""
     }));
@@ -49,11 +28,13 @@ class App extends React.Component {
         <Collapsible name="DISEÑA">
           <Design />
         </Collapsible>
-        {/* <Design onClick={this.handleClick} collapsible={this.state.collapsible} /> */}
-        {/* <Design /> */}
-        <Form />
+        <Collapsible name="RELLENA">
+          <Form />
+        </Collapsible>
+        <Collapsible name="COMPARTE">
+          <Share />
+        </Collapsible>
         <Footer />
-        <Share />
       </div>
     );
   }

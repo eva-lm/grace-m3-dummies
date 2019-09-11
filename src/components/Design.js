@@ -1,16 +1,8 @@
 import React from "react";
+import "../stylesheets/App.scss";
 
 const Design = props => {
   return (
-    // <section class="design js-collapsable">
-    //   <div class="design__box js-collapsable-header">
-    //     <div class="form__box__position">
-    //       <i class="far fa-object-ungroup fa-object-ungroup--design"></i>
-    //       <h2 class="design__title">DISEÑA</h2>
-    //     </div>
-    //     <i class="fas fa-angle-down fa-angle-up--design"></i>
-    //   </div>
-    //   <div class={`content ${props.collapsible}`} >
     <div class="design__form ">
       <h3 class="design__subtitle">COLORES</h3>
       <div class="design__form--items">
@@ -58,8 +50,6 @@ const Design = props => {
         </label>
       </div>
     </div>
-    //   </div>
-    // </section >
   );
 };
 
