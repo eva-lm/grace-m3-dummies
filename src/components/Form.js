@@ -5,7 +5,16 @@ class Form extends React.Component {
   render() {
     return (
       <div class="folded__form js-form">
-        <Item key="fullName" type="text" label="Nombre completo" placeholder="Ej: Sally Jill" inputClassName="inputName" required="required"></Item>
+        <Item
+          key="fullName"
+          type="text"
+          label="Nombre completo"
+          placeholder="Ej: Sally Jill"
+          inputClassName="inputName"
+          required="required"
+          //value={this.props.userInfo.fullName}
+          onChange={this.props.action}
+        ></Item>
 
         <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
 

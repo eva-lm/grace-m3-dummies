@@ -24,12 +24,13 @@ class App extends React.Component {
     };
   }
   handleInputChange(event) {
-    const value = event.currentTarget.value;
+    const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState((prevState, props) => {
       const newUser = { ...prevState.userInfo };
-      newUser[id] = value;
+      newUser[id] = inputValue;
       this.saveData(newUser);
+      console.log(newUser);
       return { userInfo: newUser };
     });
   }
@@ -37,12 +38,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Preview action={this.handleInputChange} userInfo={this.state.userInfo} />
+        <Preview userInfo={this.state.userInfo} />
         <Collapsible name="DISEÑA">
           <Design />
         </Collapsible>
         <Collapsible name="RELLENA">
-          <Form />
+          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
         </Collapsible>
         <Collapsible name="COMPARTE">
           <Share />

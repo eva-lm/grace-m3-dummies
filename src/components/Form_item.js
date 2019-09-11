@@ -1,7 +1,7 @@
 import React from "react";
 
 const Item = props => (
-  <div>
+  <div key={props.key}>
     <label htmlFor={props.key} className="folded__form__label">
       {props.label}
     </label>
@@ -9,8 +9,7 @@ const Item = props => (
   </div>
 );
 
-Item.defaultProps = {
-  value: ""
-};
-
+// Item.defaultProps = {
+//   value: ""
+// };
 export default Item;
