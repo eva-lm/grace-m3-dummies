@@ -7,19 +7,14 @@ import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsible: 'content'
+      collapsible: "content"
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
-
-
-
 
   // handleClick() {
   //   console.log('pasoooo de tu cara')
@@ -42,26 +37,20 @@ class App extends React.Component {
   // }
 
   handleClick() {
-    console.log('pasoooo de tu cara')
+    console.log("pasoooo de tu cara");
     this.setState((prevState, props) => ({
-      collapsible: prevState.collapsible === '' ? 'js-collapsable.open' : ''
+      collapsible: prevState.collapsible === "" ? "js-collapsable.open" : ""
     }));
   }
   render() {
     return (
       <div className="App">
-
-        <Collapsible>
+        <Preview />
+        <Collapsible name="DISEÑA">
           <Design />
         </Collapsible>
-
-        <Collapsible>
-          adios
-        </Collapsible>
-
-        <Preview />
-        <Design onClick={this.handleClick} collapsible={this.state.collapsible} />
-        <Design />
+        {/* <Design onClick={this.handleClick} collapsible={this.state.collapsible} /> */}
+        {/* <Design /> */}
         <Form />
         <Footer />
         <Share />

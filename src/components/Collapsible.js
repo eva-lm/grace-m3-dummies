@@ -15,17 +15,27 @@ class Collapsible extends React.Component {
     }));
   }
   render() {
-    const mainClassName = this.state.open === true ? 'collapsible-open' : '';
+    const openClassName = this.state.open === true ? "js-collapsable.open" : "";
     return (
-      <div className={mainClassName}>
-        <div>Share
-          <span onClick={this.toggle}>ARROW</span>
+      <section className={`design js-collapsable ${openClassName}`}>
+        <div className="design__box js-collapsable-header" onClick={this.toggle}>
+          <div className="form__box__position">
+            <i className="far fa-object-ungroup fa-object-ungroup--design"></i>
+            <h2 className="design__title">{this.props.name}</h2>
+          </div>
+          <i className="fas fa-angle-down fa-angle-up--design"></i>
         </div>
-        <div className="collapsible-content">
-          {this.props.children}
-        </div>
-      </div>
+        <div className="content">{this.props.children}</div>
+      </section>
     );
+
+    // <div className={openClassName}>
+    //   <div>
+    //     Share
+    //     <span onClick={this.toggle}>ARROW</span>
+    //   </div>
+    //   <div className="collapsible-content"></div>
+    // </div>
   }
 }
 
