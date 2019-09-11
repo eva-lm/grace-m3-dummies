@@ -22,7 +22,7 @@ const Header = () => {
         </div>
       </div>
       <button className="header__btn">
-        <a className="header__link" href="#">
+        <a className="header__link" href="algunsitio">
           comenzar
         </a>
       </button>
