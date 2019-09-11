@@ -16,7 +16,7 @@ class Collapsible extends React.Component {
     }));
   }
   render() {
-    const openClassName = this.state.open === true ? "open" : "";
+    const openClassName = this.state.open ? "open" : "";
     return (
       <section className={`folded__menu js-collapsable ${openClassName}`}>
         <div className="form__box js-collapsable-header" onClick={this.toggle}>

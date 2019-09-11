@@ -9,7 +9,7 @@ class Form extends React.Component {
 
         <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
 
-        <label for="image" class="folded__form__label">
+        <label forHtml="image" class="folded__form__label">
           Imagen de perfil
         </label>
 

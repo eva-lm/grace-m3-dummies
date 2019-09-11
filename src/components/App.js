@@ -6,11 +6,22 @@ import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
+// import userProfile from
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userInfo: {
+        fullName: "",
+        profession: "",
+        // image: userProfile,
+        emailAddress: "",
+        // telephone: ,//Quiero poner un número
+        Linkedin: "",
+        Github: ""
+      }
+    };
   }
   handleInputChange(event) {
     const value = event.currentTarget.value;
@@ -26,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Preview />
+        <Preview action={this.handleInputChange} userInfo={this.state.userInfo} />
         <Collapsible name="DISEÑA">
           <Design />
         </Collapsible>
