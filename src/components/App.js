@@ -16,7 +16,7 @@ class App extends React.Component {
       userInfo: {
         fullName: "",
         profession: "",
-        // image: userProfile,
+        image: "",
         emailAddress: "",
         telephone: "",
         Linkedin: "",
@@ -24,7 +24,10 @@ class App extends React.Component {
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  //change inputs
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
@@ -36,6 +39,30 @@ class App extends React.Component {
     });
     console.log(this.state.userInfo);
   }
+  // preview photo
+  handleSubmit(event) {
+    event.preventDefault();
+    this.setState((prevState, props) => {
+      const newUser = {
+        ...prevState.userInfo,
+        image: this.fileInput.current.files[0].name
+      };
+      console.log(newUser);
+      return { userInfo: newUser };
+    });
+    this.setState({ image: this.fileInput.current.files[0].name });
+
+    const handleFile = () => {
+      const imagePreview = fr.result;
+
+      this.setState({
+        image: imagePreview
+      });
+    };
+    const fr = new FileReader();
+    fr.addEventListener("load", handleFile);
+    fr.readAsDataURL(this.fileInput.current.files[0]);
+  }
 
   render() {
     return (
@@ -45,7 +72,11 @@ class App extends React.Component {
           <Design />
         </Collapsible>
         <Collapsible name="RELLENA">
-          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+          <Form
+            image={this.state.image}
+            action={this.handleInputChange}
+            userInfo={this.state.userInfo}
+          />
         </Collapsible>
         <Collapsible name="COMPARTE">
           <Share />
