@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/App.scss";
 
 class Collapsible extends React.Component {
   constructor(props) {
@@ -15,10 +16,10 @@ class Collapsible extends React.Component {
     }));
   }
   render() {
-    const openClassName = this.state.open === true ? "js-collapsable.open" : "";
+    const openClassName = this.state.open ? "open" : "";
     return (
-      <section className={`design js-collapsable ${openClassName}`}>
-        <div className="design__box js-collapsable-header" onClick={this.toggle}>
+      <section className={`folded__menu js-collapsable ${openClassName}`}>
+        <div className="form__box js-collapsable-header" onClick={this.toggle}>
           <div className="form__box__position">
             <i className="far fa-object-ungroup fa-object-ungroup--design"></i>
             <h2 className="design__title">{this.props.name}</h2>
@@ -28,14 +29,6 @@ class Collapsible extends React.Component {
         <div className="content">{this.props.children}</div>
       </section>
     );
-
-    // <div className={openClassName}>
-    //   <div>
-    //     Share
-    //     <span onClick={this.toggle}>ARROW</span>
-    //   </div>
-    //   <div className="collapsible-content"></div>
-    // </div>
   }
 }
 

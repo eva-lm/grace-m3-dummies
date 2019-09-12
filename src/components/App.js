@@ -6,54 +6,51 @@ import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
+// import userProfile from
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      collapsible: "content"
+      userInfo: {
+        fullName: "",
+        profession: "",
+        // image: userProfile,
+        emailAddress: "",
+        telephone: "",
+        Linkedin: "",
+        Github: ""
+      }
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  handleInputChange(event) {
+    const inputValue = event.currentTarget.value;
+    const id = event.currentTarget.id;
+    console.log(inputValue, id);
+    this.setState((prevState, props) => {
+      const newUser = { ...prevState.userInfo, [id]: inputValue };
+      console.log(newUser);
+      return { userInfo: newUser };
+    });
+    console.log(this.state.userInfo);
   }
 
-  // handleClick() {
-  //   console.log('pasoooo de tu cara')
-  //   this.setState((prevState, props) => ({
-  //     collapsible: prevState.collapsible === 'content' ? 'js-collapsable.open' : 'content'
-  //   }));
-  // }
-
-  // render() {
-  //   return (
-  //     <div className="App">
-  //       <Preview />
-  //       <Design collapsible={this.state.collapsible} onClick={this.handleClick} />
-  //       <Design />
-  //       <Form />
-  //       <Footer />
-  //       <Share />
-  //     </div>
-  //   );
-  // }
-
-  handleClick() {
-    console.log("pasoooo de tu cara");
-    this.setState((prevState, props) => ({
-      collapsible: prevState.collapsible === "" ? "js-collapsable.open" : ""
-    }));
-  }
   render() {
     return (
       <div className="App">
-        <Preview />
+        <Preview userInfo={this.state.userInfo} />
         <Collapsible name="DISEÑA">
           <Design />
         </Collapsible>
-        {/* <Design onClick={this.handleClick} collapsible={this.state.collapsible} /> */}
-        {/* <Design /> */}
-        <Form />
+        <Collapsible name="RELLENA">
+          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+        </Collapsible>
+        <Collapsible name="COMPARTE">
+          <Share />
+        </Collapsible>
         <Footer />
-        <Share />
       </div>
     );
   }
