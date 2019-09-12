@@ -5,25 +5,59 @@ import Preview from "./Preview";
 import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
+import Collapsible from "./Collapsible";
+// import userProfile from
 
-class App extends React.Component {
-  constructor(){
-    super();
+class App extends React.Component {   
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: {
+        fullName: "",
+        profession: "",
+        // image: userProfile,
+        emailAddress: "",
+        telephone: "",
+        Linkedin: "",
+        Github: ""
+      }
+    };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+
   }
 
   handlePaletteApp(props){
     console.log(`HandlePaletteApp function recibe: ${props}`)
+    return props;
   }
-  
+   
+  handleInputChange(event) {
+    const inputValue = event.currentTarget.value;
+    const id = event.currentTarget.id;
+    console.log(inputValue, id);
+    this.setState((prevState, props) => {
+      const newUser = { ...prevState.userInfo, [id]: inputValue };
+      console.log(newUser);
+      return { userInfo: newUser };
+    });
+    console.log(this.state.userInfo);
+  }
+
   render() {
     return (
       <div className="App">
-        <Preview />
-        <Design handlePaletteComponentDesign={this.handlePaletteApp} />
-        <Form />
-        {Footer}
-        <Share />
+        <Preview userInfo={this.state.userInfo} />
+        <Collapsible name="DISEÑA">
+          <Design handlePaletteDesign={ this.handlePaletteApp} />
+        </Collapsible>
+        <Collapsible name="RELLENA">
+          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+        </Collapsible>
+        <Collapsible name="COMPARTE">
+          <Share />
+        </Collapsible>
+        <Footer />
       </div>
     );
   }

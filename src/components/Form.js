@@ -1,109 +1,44 @@
 import React from "react";
+import Item from "./Form_item";
+import Button from "./Button";
 
 class Form extends React.Component {
   render() {
     return (
-      <section class="folded__menu js-collapsable">
-        <div class="form__box js-collapsable-header">
-          <div class="form__box__position">
-            <i class="far fa-keyboard fa-keyboard--design"></i>
-            <h2 class="form__title">RELLENA</h2>
-          </div>
-          <i class="fas fa-angle-down fa-angle-up--design"></i>
-        </div>
-        <div class="content">
-          <div class="folded__form js-form">
-            <label for="fullName" class="folded__form__label" id="fullName">
-              Nombre completo
-            </label>
-            <input
-              placeholder="Ej: Sally Jill"
-              id="fullName"
-              type="text"
-              name="fullName"
-              class="folded__form__input inputName"
-              maxlength="20"
-              required
-            />
-            <label for="profession" class="folded__form__label">
-              Puesto
-            </label>
-            <input
-              placeholder="Ej: Front-end unicorn"
-              id="profession"
-              type="text"
-              name="profession"
-              class="folded__form__input inputJob"
-              maxlength="25"
-              required
-            />
-            <label for="image" class="folded__form__label">
-              Imagen de perfil
-            </label>
+      <div className="folded__form js-form">
+        <Item
+          name="fullName"
+          type="text"
+          label="Nombre completo"
+          placeholder="Ej: Sally Jill"
+          inputClassName="inputName"
+          required="required"
+          //value={this.props.userInfo.fullName}
+          action={this.props.action}
+        ></Item>
 
-            <div class="folded__form__section">
-              <buttton
-                for="image"
-                class="folded__form__btnAdd js__profile-trigger"
-              >
-                Añadir Imagen
-              </buttton>
-              <input
-                type="file"
-                name="image"
-                id="image"
-                class="folded__form__inputFile js__profile-upload-btn"
-                required
-              />
-              <div class="folded__form__input2 js__profile-preview"></div>
-            </div>
+        <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
 
-            <label for="emailAddress" class="folded__form__label">
-              Correo electrónico
-            </label>
-            <input
-              placeholder="Ej: sally-hill@gmail.com"
-              type="email"
-              id="emailAddress"
-              name="emailAddress"
-              class="folded__form__input mail"
-              required
-            />
-            <label for="telephone" class="folded__form__label">
-              Teléfono
-            </label>
-            <input
-              placeholder="Ej: 555-55-55-55"
-              type="tel"
-              id="telephone"
-              name="telephone"
-              class="folded__form__input tel"
-            />
-            <label for="Linkedin" class="folded__form__label">
-              Linkedin
-            </label>
-            <input
-              placeholder="Ej: sally-hill"
-              id="Linkedin"
-              type="text"
-              name="Linkedin"
-              class="folded__form__input linkedin"
-              required
-            />
-            <label for="Github" class="folded__form__label">
-              Github
-            </label>
-            <input
-              placeholder="Ej: sally-hill"
-              type="text"
-              id="Github"
-              name="Github"
-              class="folded__form__input Github"
-              required
-            />
-          </div>
+        <label htmlFor="image" className="folded__form__label">
+          Imagen de perfil
+        </label>
+
+        <div className="folded__form__section">
+          <Button htmlFor="image" className="folded__form__btnAdd js__profile-trigger">
+            Añadir Imagen
+          </Button>
+          <input type="file" name="image" id="image" className="folded__form__inputFile js__profile-upload-btn" required />
+          <div className="folded__form__input2 js__profile-preview"></div>
         </div>
-      </section>
+
+        <Item key="emailAddress" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required"></Item>
+
+        <Item key="telephone" type="tel" label="Teléfono electrónico" placeholder="Ej: 555-55-55-55" inputClassName="tel"></Item>
+
+        <Item key="Linkedin" type="text" label="Linkedin" placeholder="Ej: sally-hill" inputClassName="linkedin" required="required"></Item>
+
+        <Item key="Github" type="text" label="Github" placeholder="Ej: sally-hill" inputClassName="Github" required="required"></Item>
+      </div>
     );
   }
 }
