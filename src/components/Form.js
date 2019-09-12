@@ -6,18 +6,9 @@ class Form extends React.Component {
   render() {
     return (
       <div className="folded__form js-form">
-        <Item
-          name="fullName"
-          type="text"
-          label="Nombre completo"
-          placeholder="Ej: Sally Jill"
-          inputClassName="inputName"
-          required="required"
-          //value={this.props.userInfo.fullName}
-          action={this.props.action}
-        ></Item>
+        <Item name="fullName" type="text" label="Nombre completo" placeholder="Ej: Sally Jill" inputClassName="inputName" required="required" value={this.props.userInfo.fullName} action={this.props.action}></Item>
 
-        <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
+        <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required" value={this.props.userInfo.profession} action={this.props.action}></Item>
 
         <label htmlFor="image" className="folded__form__label">
           Imagen de perfil

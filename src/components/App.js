@@ -38,18 +38,28 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.userInfo);
     return (
-      <div className="App">
-        <Preview userInfo={this.state.userInfo} />
-        <Collapsible name="DISEÑA">
-          <Design />
-        </Collapsible>
-        <Collapsible name="RELLENA">
-          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
-        </Collapsible>
-        <Collapsible name="COMPARTE">
-          <Share />
-        </Collapsible>
+      <div className="app">
+        <div className="viewer__header">{/* me faltan moviisss */}</div>
+        <section className="section__mediasq">
+          <div className="visor__mediasq">
+            <Preview userInfo={this.state.userInfo} />
+          </div>
+          <div className="workSpace">
+            <form id="form">
+              <Collapsible name="DISEÑA">
+                <Design />
+              </Collapsible>
+              <Collapsible name="RELLENA">
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+              </Collapsible>
+              <Collapsible name="COMPARTE">
+                <Share />
+              </Collapsible>
+            </form>
+          </div>
+        </section>
         <Footer />
       </div>
     );
