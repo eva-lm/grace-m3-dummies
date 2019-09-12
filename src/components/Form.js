@@ -1,12 +1,13 @@
 import React from "react";
 import Item from "./Form_item";
+import Button from "./Button";
 
 class Form extends React.Component {
   render() {
     return (
       <div className="folded__form js-form">
         <Item
-          key="fullName"
+          name="fullName"
           type="text"
           label="Nombre completo"
           placeholder="Ej: Sally Jill"
@@ -23,9 +24,9 @@ class Form extends React.Component {
         </label>
 
         <div className="folded__form__section">
-          <buttton htmlFor="image" className="folded__form__btnAdd js__profile-trigger">
+          <Button htmlFor="image" className="folded__form__btnAdd js__profile-trigger">
             Añadir Imagen
-          </buttton>
+          </Button>
           <input type="file" name="image" id="image" className="folded__form__inputFile js__profile-upload-btn" required />
           <div className="folded__form__input2 js__profile-preview"></div>
         </div>

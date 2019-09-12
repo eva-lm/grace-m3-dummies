@@ -34,6 +34,7 @@ class App extends React.Component {
       console.log(newUser);
       return { userInfo: newUser };
     });
+    console.log(this.state.userInfo);
   }
 
   render() {
