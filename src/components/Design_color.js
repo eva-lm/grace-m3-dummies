@@ -12,8 +12,8 @@ class ColorPalette extends React.Component{
   } 
     render(){
         return (
-            <label HTMLfor={this.props.for} className="color__box">
-            <input type="radio" HTMLfor={this.props.for} className="radio_btn" name="design" value={this.props.value} onClick={this.handlePalette}/>
+            <label htmlFor={this.props.for} className="color__box">
+            <input type="radio" htmlFor={this.props.for} className="radio_btn" name="design" value={this.props.value} onClick={this.handlePalette}/>
             <div className={`color__one--${this.props.number}`}></div>
             <div className={`color__two--${this.props.number}`}></div>
             <div className={`color__three--${this.props.number}`}></div>
