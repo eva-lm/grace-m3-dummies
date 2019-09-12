@@ -9,19 +9,18 @@ import Share from "./Share";
 class App extends React.Component {
   constructor(){
     super();
-    this.handlePalette = this.handlePalette.bind(this);
+    this.handlePaletteApp = this.handlePaletteApp.bind(this);
+  }
+
+  handlePaletteApp(props){
+    console.log(`HandlePaletteApp function recibe: ${props}`)
   }
   
-  handlePalette(palette){
-    debugger
-    console.log("Paso por aqui")
-    return [1,2,3]
-  }
   render() {
     return (
       <div className="App">
         <Preview />
-        <Design handlePaletteComponentDesign={this.handlePalette} />
+        <Design handlePaletteComponentDesign={this.handlePaletteApp} />
         <Form />
         {Footer}
         <Share />
