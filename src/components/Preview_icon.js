@@ -3,10 +3,14 @@ import Preview from "./Preview";
 
 class Preview_icon extends React.Component {
   render() {
+    console.log(this.props);
     const iconMobile = (
-      <div className="viewer__icon-style">
-        <i className={props.className}></i>
-      </div>
+      <Preview>
+        <div className="viewer__icon-style">
+          {this.props.color}
+          <i className={this.props.className}></i>
+        </div>
+      </Preview>
     );
     return { iconMobile };
   }
