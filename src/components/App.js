@@ -11,7 +11,6 @@ import Collapsible from "./Collapsible";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       userInfo: {
         fullName: "",
@@ -23,8 +22,15 @@ class App extends React.Component {
         Github: ""
       }
     };
+    this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+
+  handlePaletteApp(props) {
+    console.log(`HandlePaletteApp function recibe: ${props}`);
+    return props;
+  }
+
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
@@ -49,7 +55,7 @@ class App extends React.Component {
           <div className="workSpace">
             <form id="form">
               <Collapsible name="DISEÑA">
-                <Design />
+                <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
