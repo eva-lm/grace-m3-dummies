@@ -8,10 +8,9 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 // import userProfile from
 
-class App extends React.Component {
+class App extends React.Component {   
   constructor(props) {
     super(props);
-
     this.state = {
       userInfo: {
         fullName: "",
@@ -23,8 +22,16 @@ class App extends React.Component {
         Github: ""
       }
     };
+    this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+
   }
+
+  handlePaletteApp(props){
+    console.log(`HandlePaletteApp function recibe: ${props}`)
+    return props;
+  }
+   
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
@@ -42,7 +49,7 @@ class App extends React.Component {
       <div className="App">
         <Preview userInfo={this.state.userInfo} />
         <Collapsible name="DISEÑA">
-          <Design />
+          <Design handlePaletteDesign={ this.handlePaletteApp} />
         </Collapsible>
         <Collapsible name="RELLENA">
           <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
