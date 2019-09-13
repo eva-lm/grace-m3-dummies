@@ -34,17 +34,18 @@ class App extends React.Component {
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
-    console.log(inputValue, id);
+    // console.log(inputValue, id);
     this.setState((prevState, props) => {
+      debugger;
       const newUser = { ...prevState.userInfo, [id]: inputValue };
       console.log(newUser);
       return { userInfo: newUser };
     });
-    console.log(this.state.userInfo);
+    // console.log(this.state.userInfo);
   }
 
   render() {
-    console.log(this.state.userInfo);
+    // console.log(this.state.userInfo);
     return (
       <div className="app">
         <div className="viewer__header">{/* me faltan moviisss */}</div>
