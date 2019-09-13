@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Form_item";
 //import Button from "./Button";
-import CardPreview from "./CardPreview";
+import FileForm from "./FileForm";
 class Form extends React.Component {
   render() {
     return (
@@ -30,7 +30,7 @@ class Form extends React.Component {
           Imagen de perfil
         </label>
         <label>
-          <CardPreview image={this.props.image}></CardPreview>
+          <FileForm image={this.props.image}></FileForm>
         </label>
         <Item
           key="emailAddress"

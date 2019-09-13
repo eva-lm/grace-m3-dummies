@@ -42,18 +42,19 @@ class App extends React.Component {
   // preview photo
   handleSubmit(event) {
     event.preventDefault();
-    this.setState((prevState, props) => {
-      const newUser = {
-        ...prevState.userInfo,
-        image: this.fileInput.current.files[0].name
-      };
-      console.log(newUser);
-      return { userInfo: newUser };
-    });
-    this.setState({ image: this.fileInput.current.files[0].name });
+    // this.setState((prevState, props) => {
+    //   const newUser = {
+    //     ...prevState.userInfo,
+    //     image: this.fileInput.current.files[0].name
+    //   };
+    //   console.log(newUser);
+    //   return { userInfo: newUser };
+    // });
+    // this.setState({ image: this.fileInput.current.files[0].name });
 
     const handleFile = () => {
       const imagePreview = fr.result;
+      console.log(fr.result);
 
       this.setState({
         image: imagePreview
@@ -65,6 +66,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <Preview userInfo={this.state.userInfo} />
