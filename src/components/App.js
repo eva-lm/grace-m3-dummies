@@ -11,7 +11,6 @@ import Collapsible from "./Collapsible";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       userInfo: {
         fullName: "",
@@ -23,11 +22,18 @@ class App extends React.Component {
         Github: ""
       }
     };
+    this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   //change inputs
+
+  handlePaletteApp(props) {
+    console.log(`HandlePaletteApp function recibe: ${props}`);
+    return props;
+  }
+
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
@@ -40,19 +46,19 @@ class App extends React.Component {
     console.log(this.state.userInfo);
   }
   // preview photo
-  handleSubmit(event) {
+  /*   handleSubmit(event) {
     event.preventDefault();
-    // this.setState((prevState, props) => {
-    //   const newUser = {
-    //     ...prevState.userInfo,
-    //     image: this.fileInput.current.files[0].name
-    //   };
-    //   console.log(newUser);
-    //   return { userInfo: newUser };
-    // });
-    // this.setState({ image: this.fileInput.current.files[0].name });
+    this.setState((prevState, props) => {
+      const newUser = {
+        ...prevState.userInfo,
+        image: this.fileInput.current.files[0].name
+      };
+      console.log(newUser);
+      return { userInfo: newUser };
+    }); */
+  //this.setState({ image: this.fileInput.current.files[0].name });
 
-    const handleFile = () => {
+  /*     const handleFile = () => {
       const imagePreview = fr.result;
       console.log(fr.result);
 
@@ -63,7 +69,7 @@ class App extends React.Component {
     const fr = new FileReader();
     fr.addEventListener("load", handleFile);
     fr.readAsDataURL(this.fileInput.current.files[0]);
-  }
+  } */
 
   render() {
     console.log(this.state);
@@ -71,7 +77,7 @@ class App extends React.Component {
       <div className="App">
         <Preview userInfo={this.state.userInfo} />
         <Collapsible name="DISEÑA">
-          <Design />
+          <Design handlePaletteDesign={this.handlePaletteApp} />
         </Collapsible>
         <Collapsible name="RELLENA">
           <Form

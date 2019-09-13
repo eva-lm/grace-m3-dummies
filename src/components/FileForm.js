@@ -4,7 +4,12 @@ class FileForm extends React.Component {
   constructor(props) {
     super(props);
     this.fileInput = React.createRef();
+    this.state = {
+      image: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -16,15 +21,14 @@ class FileForm extends React.Component {
     //   console.log(newUser);
     //   return { userInfo: newUser };
     // });
-    // this.setState({ image: this.fileInput.current.files[0].name });
+    this.setState({ image: this.fileInput.current.files[0] });
 
     const handleFile = () => {
       const imagePreview = fr.result;
       console.log(imagePreview);
-
-      // this.setState({
-      //   image: imagePreview
-      // });
+      this.setState({
+        image: imagePreview
+      });
     };
     const fr = new FileReader();
     fr.addEventListener("load", handleFile);
@@ -32,6 +36,7 @@ class FileForm extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div>
         <input
@@ -41,14 +46,10 @@ class FileForm extends React.Component {
           id="image"
           className="folded__form__inputFile js__profile-upload-btn"
           required
-        />
-        <input
-          type="submit"
-          onClick={this.handleSubmit}
-          value="Añadir Imagen"
+          onChange={this.handleSubmit}
         />
         <div className="folded__form__input2 js__profile-preview">
-          <img src={this.props.image} />
+          <img src={this.state.image} alt="profile" />
         </div>
       </div>
     );
