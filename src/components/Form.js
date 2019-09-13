@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Form_item";
-import Button from "./Button";
+//import Button from "./Button";
 import CardPreview from "./CardPreview";
 class Form extends React.Component {
   render() {
@@ -29,9 +29,9 @@ class Form extends React.Component {
         <label htmlFor="image" className="folded__form__label">
           Imagen de perfil
         </label>
-
-        <CardPreview image={this.props.image}></CardPreview>
-
+        <label>
+          <CardPreview image={this.props.image}></CardPreview>
+        </label>
         <Item
           key="emailAddress"
           type="email"

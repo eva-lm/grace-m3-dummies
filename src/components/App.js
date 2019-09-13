@@ -73,6 +73,7 @@ class App extends React.Component {
         </Collapsible>
         <Collapsible name="RELLENA">
           <Form
+            onSubmit={this.handleSubmit}
             image={this.state.image}
             action={this.handleInputChange}
             userInfo={this.state.userInfo}

@@ -10,16 +10,15 @@ class CardPreview extends React.Component {
     return (
       <div>
         <input
-          type="file"
+          type="submit"
           ref={this.fileInput}
           name="image"
           id="image"
           className="folded__form__inputFile js__profile-upload-btn"
           required
         />
-        <button type="submit" onClick={this.handleSubmit}>
-          Añadir Imagen
-        </button>
+        <input type="file" onClick={this.handleSubmit} />
+        Añadir Imagen
         <div className="folded__form__input2 js__profile-preview">
           {this.props.image}
         </div>
