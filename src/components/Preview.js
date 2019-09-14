@@ -17,14 +17,11 @@ const Preview = props => {
               <div className="viewer__image-title">
                 <div className={`viewer__image-line-color${props.userInfo.palette}`}></div>
                 <div className="viewer__image-text">
-                  <h2 className={`viewer__image-name-color${props.userInfo.palette}`}>
-                    {/* {props.userInfo.fullName} */}
-                    {props.fullName}
-                  </h2>
-                  <h3 className={`viewer__image-profession-color${props.userInfo.palette}`}>Front-end developer</h3>
+                  <h2 className={`viewer__image-name-color${props.userInfo.palette}`}>{props.userInfo.fullName || "Nombre completo"}</h2>
+                  <h3 className={`viewer__image-profession-color${props.userInfo.palette}`}>{props.userInfo.profession || "Front-end developer"}</h3>
                 </div>
               </div>
-              <img className="viewer__profile-picture js__profile-image" alt="user" src={defaultImage} />
+              <img className="viewer__profile-picture js__profile-image" alt="user picture" src={defaultImage} />
               <div className="viewer__icons">
                 <div className={`viewer__icon-style-color${props.userInfo.palette}`}>
                   <i className="fas fa-mobile-alt"></i>
