@@ -37,7 +37,7 @@ class FileForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="folded__form__section">
         <input
           type="file"
           ref={this.fileInput}
@@ -47,8 +47,14 @@ class FileForm extends React.Component {
           required
           onChange={this.handleSubmit}
         />
+        <label
+          htmlFor="image"
+          className="folded__form__btnAdd js__profile-trigger"
+        >
+          Añadir Imagen
+        </label>
         <div className="folded__form__input2 js__profile-preview">
-          <img src={this.state.image} alt="profile" />
+          <img src={this.state.image} /* alt="profile" */ />
         </div>
       </div>
     );

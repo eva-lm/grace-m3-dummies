@@ -32,34 +32,8 @@ class Form extends React.Component {
         <label htmlFor="image" className="folded__form__label">
           Imagen de perfil
         </label>
-        <label>
-          <FileForm image={this.props.image}></FileForm>
-        </label>
-        <Item
-          key="emailAddress"
-          type="email"
-          label="Correo electrónico"
-          placeholder="Ej: sally-hill@gmail.com"
-          inputClassName="mail"
-          required="required"
-        ></Item>
 
-        <div className="folded__form__section">
-          <Button
-            htmlFor="image"
-            className="folded__form__btnAdd js__profile-trigger"
-          >
-            Añadir Imagen
-          </Button>
-          <input
-            type="file"
-            name="image"
-            id="image"
-            className="folded__form__inputFile js__profile-upload-btn"
-            required
-          />
-          <div className="folded__form__input2 js__profile-preview"></div>
-        </div>
+        <FileForm image={this.props.image}></FileForm>
 
         <Item
           name="emailAddress"
