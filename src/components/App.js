@@ -13,6 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       userInfo: {
+        palette: 1,
         fullName: "",
         profession: "",
         // image: userProfile,
@@ -26,9 +27,13 @@ class App extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handlePaletteApp(props) {
-    console.log(`HandlePaletteApp function recibe: ${props}`);
-    return props;
+  handlePaletteApp(palette){
+    ///
+    const newUserInfo = {
+      ...this.userInfo,
+      palette: palette
+    }
+    this.setState({ userInfo: newUserInfo },console.log(this.state))
   }
 
   handleInputChange(event) {
@@ -41,7 +46,6 @@ class App extends React.Component {
       console.log(newUser);
       return { userInfo: newUser };
     });
-    // console.log(this.state.userInfo);
   }
 
   render() {
