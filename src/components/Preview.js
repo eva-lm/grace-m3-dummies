@@ -20,10 +20,16 @@ const Preview = props => {
                     {/* {props.userInfo.fullName} */}
                     {props.fullName}
                   </h2>
-                  <h3 className="viewer__image-profession js-Job">Front-end developer</h3>
+                  <h3 className="viewer__image-profession js-Job">
+                    Front-end developer
+                  </h3>
                 </div>
               </div>
-              <img className="viewer__profile-picture js__profile-image" alt="user" src={defaultImage} />
+              <img
+                className="viewer__profile-picture js__profile-image"
+                alt="user"
+                src={props.image || defaultImage}
+              />
               <div className="viewer__icons">
                 <div className="viewer__icon-style">
                   <i className="fas fa-mobile-alt"></i>

@@ -36,7 +36,6 @@ class FileForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div>
         <input
