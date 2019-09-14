@@ -15,7 +15,7 @@ class Form extends React.Component {
           Imagen de perfil
         </label>
 
-        <FileForm image={this.props.image}></FileForm>
+        <FileForm handlePhotoFileForm={this.props.handlePhotoForm} image={this.props.image}></FileForm>
 
         <Item name="email" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required" value={this.props.userInfo.email} action={this.props.action}></Item>
 

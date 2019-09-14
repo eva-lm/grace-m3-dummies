@@ -21,7 +21,7 @@ const Preview = props => {
                   <h3 className={`viewer__image-profession-color${props.userInfo.palette}`}>{props.userInfo.job || "Front-end developer"}</h3>
                 </div>
               </div>
-              <img className="profile viewer__profile-picture js__profile-image" alt="user picture" src={props.image || defaultImage} />
+              <img className="profile viewer__profile-picture js__profile-image" alt="user picture" src={props.userInfo.photo || defaultImage} />
               <div className="viewer__icons">
                 <div className={`viewer__icon-style-color${props.userInfo.palette}`}>
                   <i className="fas fa-mobile-alt"></i>

@@ -17,7 +17,7 @@ class App extends React.Component {
         palette: 1,
         name: "",
         job: "",
-        // photo: userProfile,
+        photo: "",
         email: "",
         phone: "",
         linkedin: "",
@@ -26,27 +26,26 @@ class App extends React.Component {
     };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handlePhotoApp = this.handlePhotoApp.bind(this);
   }
-
+  // Change color
   handlePaletteApp(palette) {
-    ///
-    const newUserInfo = {
-      ...this.userInfo,
-      palette: palette
-    };
+    const newUserInfo = { ...this.state.userInfo, palette: palette };
     this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
-
+  // Write input values on card
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
-    // console.log(inputValue, id);
-    this.setState((prevState, props) => {
-      debugger;
-      const newUser = { ...prevState.userInfo, [id]: inputValue };
-      console.log(newUser);
-      return { userInfo: newUser };
-    });
+    const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
+  }
+
+  // Change profile picture
+  handlePhotoApp(photo) {
+    console.log(photo);
+    const newUserInfo = { ...this.state.userInfo, photo: photo };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
 
   render() {
@@ -54,7 +53,7 @@ class App extends React.Component {
       <div className="app">
         <HeaderApp />
         <section className="section__mediasq">
-          <div className="visor__mediasq">
+          <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
             <Preview userInfo={this.state.userInfo} />
           </div>
           <div className="workSpace">
@@ -63,7 +62,7 @@ class App extends React.Component {
                 <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
                 <Share />

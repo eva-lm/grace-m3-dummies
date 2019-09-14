@@ -1,9 +1,9 @@
 import React from "react";
 
 const HeaderApp = props => (
-  <div class="viewer__header">
+  <div className="viewer__header">
     <a href="#">
-      <div class="viewer__logo"></div>
+      <div className="viewer__logo"></div>
     </a>
   </div>
 );

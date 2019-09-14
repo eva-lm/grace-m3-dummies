@@ -13,22 +13,16 @@ class FileForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    // this.setState((prevState, props) => {
-    //   const newUser = {
-    //     ...prevState.userInfo,
-    //     image: this.fileInput.current.files[0].name
-    //   };
-    //   console.log(newUser);
-    //   return { userInfo: newUser };
-    // });
-    this.setState({ image: this.fileInput.current.files[0] });
-
     const handleFile = () => {
+      // this.setState({ image: this.fileInput.current.files[0] });
+      // console.log(this.state.image);
+
       const imagePreview = fr.result;
       console.log(imagePreview);
       this.setState({
         image: imagePreview
       });
+      this.props.handlePhotoFileForm(this.state.image);
     };
     const fr = new FileReader();
     fr.addEventListener("load", handleFile);
@@ -43,7 +37,7 @@ class FileForm extends React.Component {
           Añadir Imagen
         </label>
         <div className="folded__form__input2 js__profile-preview">
-          <img src={this.state.image} /* alt="profile" */ />
+          <img className="profile" src={this.state.image} /* alt="profile" */ />
         </div>
       </div>
     );
