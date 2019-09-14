@@ -8,7 +8,7 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 // import userProfile from
 
-class App extends React.Component {   
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +25,6 @@ class App extends React.Component {
     };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-
   }
 
   handlePaletteApp(palette){
@@ -36,12 +35,13 @@ class App extends React.Component {
     }
     this.setState({ userInfo: newUserInfo },console.log(this.state))
   }
-   
+
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
-    console.log(inputValue, id);
+    // console.log(inputValue, id);
     this.setState((prevState, props) => {
+      debugger;
       const newUser = { ...prevState.userInfo, [id]: inputValue };
       console.log(newUser);
       return { userInfo: newUser };
@@ -49,18 +49,28 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state.userInfo);
     return (
-      <div className="App">
-        <Preview userInfo={this.state.userInfo} />
-        <Collapsible name="DISEÑA">
-          <Design handlePaletteDesign={ this.handlePaletteApp} />
-        </Collapsible>
-        <Collapsible name="RELLENA">
-          <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
-        </Collapsible>
-        <Collapsible name="COMPARTE">
-          <Share />
-        </Collapsible>
+      <div className="app">
+        <div className="viewer__header">{/* me faltan moviisss */}</div>
+        <section className="section__mediasq">
+          <div className="visor__mediasq">
+            <Preview userInfo={this.state.userInfo} />
+          </div>
+          <div className="workSpace">
+            <form id="form">
+              <Collapsible name="DISEÑA">
+                <Design handlePaletteDesign={this.handlePaletteApp} />
+              </Collapsible>
+              <Collapsible name="RELLENA">
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+              </Collapsible>
+              <Collapsible name="COMPARTE">
+                <Share />
+              </Collapsible>
+            </form>
+          </div>
+        </section>
         <Footer />
       </div>
     );

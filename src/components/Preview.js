@@ -47,13 +47,4 @@ const Preview = props => {
   );
 };
 
-// Preview.defaultProps = {
-//   userInfo: {
-//     fullName: "Nombre Completo"
-//   }
-// };
-Preview.defaultProps = {
-  fullName: "Nombre Completo"
-};
-
 export default Preview;

@@ -4,20 +4,12 @@ import Button from "./Button";
 
 class Form extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div className="folded__form js-form">
-        <Item
-          name="fullName"
-          type="text"
-          label="Nombre completo"
-          placeholder="Ej: Sally Jill"
-          inputClassName="inputName"
-          required="required"
-          //value={this.props.userInfo.fullName}
-          action={this.props.action}
-        ></Item>
+        <Item name="fullName" type="text" label="Nombre completo" placeholder="Ej: Sally Jill" inputClassName="inputName" required="required" value={this.props.userInfo.fullName} action={this.props.action}></Item>
 
-        <Item key="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required"></Item>
+        <Item name="profession" type="text" label="Puesto" placeholder="Ej: Front-end unicorn" inputClassName="inputJob" required="required" value={this.props.userInfo.profession} action={this.props.action}></Item>
 
         <label htmlFor="image" className="folded__form__label">
           Imagen de perfil
@@ -31,13 +23,13 @@ class Form extends React.Component {
           <div className="folded__form__input2 js__profile-preview"></div>
         </div>
 
-        <Item key="emailAddress" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required"></Item>
+        <Item name="emailAddress" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required" value={this.props.userInfo.emailAddress} action={this.props.action}></Item>
 
-        <Item key="telephone" type="tel" label="Teléfono electrónico" placeholder="Ej: 555-55-55-55" inputClassName="tel"></Item>
+        <Item name="telephone" type="tel" label="Teléfono electrónico" placeholder="Ej: 555-55-55-55" inputClassName="tel" value={this.props.userInfo.telephone} action={this.props.action}></Item>
 
-        <Item key="Linkedin" type="text" label="Linkedin" placeholder="Ej: sally-hill" inputClassName="linkedin" required="required"></Item>
+        <Item name="Linkedin" type="text" label="Linkedin" placeholder="Ej: sally-hill" inputClassName="linkedin" required="required" value={this.props.userInfo.Linkedin} action={this.props.action}></Item>
 
-        <Item key="Github" type="text" label="Github" placeholder="Ej: sally-hill" inputClassName="Github" required="required"></Item>
+        <Item name="Github" type="text" label="Github" placeholder="Ej: sally-hill" inputClassName="Github" required="required" value={this.props.userInfo.Github} action={this.props.action}></Item>
       </div>
     );
   }
