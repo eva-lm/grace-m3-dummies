@@ -6,6 +6,7 @@ import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
+import HeaderApp from "./HeaderApp";
 // import userProfile from
 
 class App extends React.Component {
@@ -14,26 +15,26 @@ class App extends React.Component {
     this.state = {
       userInfo: {
         palette: 1,
-        fullName: "",
-        profession: "",
-        // image: userProfile,
-        emailAddress: "",
-        telephone: "",
-        Linkedin: "",
-        Github: ""
+        name: "",
+        job: "",
+        // photo: userProfile,
+        email: "",
+        phone: "",
+        linkedin: "",
+        github: ""
       }
     };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handlePaletteApp(palette){
+  handlePaletteApp(palette) {
     ///
     const newUserInfo = {
       ...this.userInfo,
       palette: palette
-    }
-    this.setState({ userInfo: newUserInfo },console.log(this.state))
+    };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
 
   handleInputChange(event) {
@@ -49,10 +50,9 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.userInfo);
     return (
       <div className="app">
-        <div className="viewer__header">{/* me faltan moviisss */}</div>
+        <HeaderApp />
         <section className="section__mediasq">
           <div className="visor__mediasq">
             <Preview userInfo={this.state.userInfo} />

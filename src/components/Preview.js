@@ -3,7 +3,7 @@ import defaultImage from "../images/natalie-portman.jpg";
 import Button from "./Button";
 
 const Preview = props => {
-  console.log("rendering....")
+  console.log("rendering....");
   return (
     <section className="viewer">
       <div className="viewer__container-background">
@@ -17,8 +17,8 @@ const Preview = props => {
               <div className="viewer__image-title">
                 <div className={`viewer__image-line-color${props.userInfo.palette}`}></div>
                 <div className="viewer__image-text">
-                  <h2 className={`viewer__image-name-color${props.userInfo.palette}`}>{props.userInfo.fullName || "Nombre completo"}</h2>
-                  <h3 className={`viewer__image-profession-color${props.userInfo.palette}`}>{props.userInfo.profession || "Front-end developer"}</h3>
+                  <h2 className={`viewer__image-name-color${props.userInfo.palette}`}>{props.userInfo.name || "Nombre completo"}</h2>
+                  <h3 className={`viewer__image-profession-color${props.userInfo.palette}`}>{props.userInfo.job || "Front-end developer"}</h3>
                 </div>
               </div>
               <img className="viewer__profile-picture js__profile-image" alt="user picture" src={defaultImage} />
