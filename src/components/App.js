@@ -24,13 +24,14 @@ class App extends React.Component {
         github: ""
       }
     };
-    this.state.userInfo = this.getData();
+    this.state = { ...this.resetState };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
     this.saveData = this.saveData.bind(this);
     this.getData = this.getData.bind(this);
     // this.fillIconInputs();
+    this.state.userInfo = this.getData();
   }
   // Change color
   handlePaletteApp(palette) {
