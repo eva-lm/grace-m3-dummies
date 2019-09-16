@@ -27,6 +27,7 @@ class App extends React.Component {
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.fillIconInputs();
   }
   // Change color
   handlePaletteApp(palette) {
@@ -38,7 +39,7 @@ class App extends React.Component {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
     const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
-    this.setState({ userInfo: newUserInfo }, console.log(this.state));
+    this.setState({ userInfo: newUserInfo }, console.log(this.fillIconInputs(id)));
   }
 
   // Change profile picture
@@ -48,13 +49,22 @@ class App extends React.Component {
     this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
 
+  //Opacity card icons
+  fillIconInputs(id) {
+    //no funciona por la movida esa de la asincronia. hay que hacer esta funcion como un callback
+    return !!this.state.userInfo[id] ? "" : "clear";
+  }
+
   render() {
     return (
       <div className="app">
         <HeaderApp />
         <section className="section__mediasq">
           <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
-            <Preview userInfo={this.state.userInfo} />
+            <Preview
+              // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
+              userInfo={this.state.userInfo}
+            />
           </div>
           <div className="workSpace">
             <form id="form">
