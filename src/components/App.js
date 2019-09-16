@@ -6,6 +6,7 @@ import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
+import HeaderApp from "./HeaderApp";
 // import userProfile from
 
 class App extends React.Component {
@@ -14,51 +15,56 @@ class App extends React.Component {
     this.resetState = {
       userInfo: {
         palette: 1,
-        fullName: "",
-        profession: "",
-        // image: userProfile,
-        emailAddress: "",
-        telephone: "",
-        Linkedin: "",
-        Github: "",
-      }}
-    this.state = {
-      userInfo: {...this.resetState}
-    }
-
+        name: "",
+        job: "",
+        photo: "",
+        email: "",
+        phone: "",
+        linkedin: "",
+        github: ""
+      }
+    };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.fillIconInputs();
   }
-
-  handlePaletteApp(palette){
-    ///
-    const newUserInfo = {
-      ...this.userInfo,
-      palette: palette
-    }
-    this.setState({ userInfo: newUserInfo },console.log(this.state))
+  // Change color
+  handlePaletteApp(palette) {
+    const newUserInfo = { ...this.state.userInfo, palette: palette };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
-
+  // Write input values on card
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
-    // console.log(inputValue, id);
-    this.setState((prevState, props) => {
-      debugger;
-      const newUser = { ...prevState.userInfo, [id]: inputValue };
-      console.log(newUser);
-      return { userInfo: newUser };
-    });
+    const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
+    this.setState({ userInfo: newUserInfo }, console.log(this.fillIconInputs(id)));
+  }
+
+  // Change profile picture
+  handlePhotoApp(photo) {
+    console.log(photo);
+    const newUserInfo = { ...this.state.userInfo, photo: photo };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
+  }
+
+  //Opacity card icons
+  fillIconInputs(id) {
+    //no funciona por la movida esa de la asincronia. hay que hacer esta funcion como un callback
+    return !!this.state.userInfo[id] ? "" : "clear";
   }
 
   render() {
-    // console.log(this.state.userInfo);
     return (
       <div className="app">
-        <div className="viewer__header">{/* me faltan moviisss */}</div>
+        <HeaderApp />
         <section className="section__mediasq">
-          <div className="visor__mediasq">
-            <Preview userInfo={this.state.userInfo} />
+          <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
+            <Preview
+              // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
+              userInfo={this.state.userInfo}
+            />
           </div>
           <div className="workSpace">
             <form id="form">
@@ -66,7 +72,7 @@ class App extends React.Component {
                 <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} />
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
                 <Share />
