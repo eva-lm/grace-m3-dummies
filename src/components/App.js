@@ -24,46 +24,48 @@ class App extends React.Component {
         github: ""
       }
     };
+    debugger;
+    this.state.userInfo = this.getData();
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
     this.saveData = this.saveData.bind(this);
-    this.fillIconInputs();
+    this.getData = this.getData.bind(this);
+    // this.fillIconInputs();
   }
   // Change color
   handlePaletteApp(palette) {
-    //PASAN STRANGER THINGS CON LAS PALETAS EN EL LOCAL STORAGE
+    console.log(palette);
     const newUserInfo = { ...this.state.userInfo, palette: palette };
-    this.setState({ userInfo: newUserInfo }, this.saveData(this.state.userInfo));
+    this.setState({ userInfo: newUserInfo }, this.saveData);
   }
   // Write input values on card
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
     const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
-    this.setState(
-      { userInfo: newUserInfo },
-      //  this.fillIconInputs(id),
-      this.saveData(this.state.userInfo)
-    );
+    this.setState({ userInfo: newUserInfo }, this.saveData);
   }
 
   // Change profile picture
   handlePhotoApp(photo) {
     console.log(photo);
     const newUserInfo = { ...this.state.userInfo, photo: photo };
-    this.setState({ userInfo: newUserInfo }, this.saveData(this.state.userInfo));
+    this.setState({ userInfo: newUserInfo }, this.saveData);
   }
 
   //Opacity card icons
-  fillIconInputs(id) {
-    //no funciona por la movida esa de la asincronia. hay que hacer esta funcion como un callback
-    return !!this.state.userInfo[id] ? "" : "clear";
-  }
+  // fillIconInputs(id) {
+  //   return !!this.state.userInfo[id] ? "" : "clear";
+  // }
 
   //LocalStorage
-  saveData(userInfo) {
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  saveData() {
+    localStorage.setItem("userInfo", JSON.stringify(this.state.userInfo));
+  }
+
+  getData() {
+    return JSON.parse(localStorage.getItem("userInfo"));
   }
 
   render() {
