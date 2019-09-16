@@ -7,12 +7,13 @@ import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
+import ResetButton from "./ResetButton";
 // import userProfile from
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.resetState = {
       userInfo: {
         palette: 1,
         name: "",
@@ -24,11 +25,18 @@ class App extends React.Component {
         github: ""
       }
     };
+    this.state = { ...this.resetState };
+
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
     this.fillIconInputs();
   }
+  //resey
+  handleClickReset() {
+    this.setState({ userInfo: this.resetState });
+  }
+
   // Change color
   handlePaletteApp(palette) {
     const newUserInfo = { ...this.state.userInfo, palette: palette };
@@ -39,7 +47,10 @@ class App extends React.Component {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
     const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
-    this.setState({ userInfo: newUserInfo }, console.log(this.fillIconInputs(id)));
+    this.setState(
+      { userInfo: newUserInfo },
+      console.log(this.fillIconInputs(id))
+    );
   }
 
   // Change profile picture
@@ -62,6 +73,7 @@ class App extends React.Component {
         <section className="section__mediasq">
           <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
             <Preview
+              resetButton={this.handleClickReset}
               // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
               userInfo={this.state.userInfo}
             />
@@ -72,7 +84,11 @@ class App extends React.Component {
                 <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
+                <Form
+                  action={this.handleInputChange}
+                  userInfo={this.state.userInfo}
+                  handlePhotoForm={this.handlePhotoApp}
+                />
               </Collapsible>
               <Collapsible name="COMPARTE">
                 <Share />
