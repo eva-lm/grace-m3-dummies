@@ -24,7 +24,6 @@ class App extends React.Component {
         github: ""
       }
     };
-    debugger;
     this.state.userInfo = this.getData();
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
