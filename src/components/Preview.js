@@ -23,16 +23,16 @@ const Preview = props => {
               </div>
               <img className="profile viewer__profile-picture js__profile-image" alt="user picture" src={photo || defaultImage} />
               <div className="viewer__icons">
-                <div className={`viewer__icon-style-color${palette}`}>
+                <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
                   <i className="fas fa-mobile-alt"></i>
                 </div>
-                <div className={`viewer__icon-style-color${palette}`}>
+                <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
                   <i className="far fa-envelope"></i>
                 </div>
-                <div className={`viewer__icon-style-color${palette}`}>
+                <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
                   <i className="fab fa-linkedin-in"></i>
                 </div>
-                <div className={`viewer__icon-style-color${palette}`}>
+                <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
                   <i className="fab fa-github-alt"></i>
                 </div>
               </div>
