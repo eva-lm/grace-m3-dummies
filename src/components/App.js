@@ -55,6 +55,10 @@ class App extends React.Component {
     return !!this.state.userInfo[id] ? "" : "clear";
   }
 
+  getDataFromApi(){
+    return <Api props={this.state}/>
+  }
+
   render() {
     return (
       <div className="app">
@@ -75,7 +79,7 @@ class App extends React.Component {
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share />
+                <Share getDataFromApi = {this.getDataFromApi}/>
               </Collapsible>
             </form>
           </div>
