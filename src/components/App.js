@@ -6,6 +6,7 @@ import Design from "./Design";
 import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
+import HeaderApp from "./HeaderApp";
 // import userProfile from
 
 class App extends React.Component {
@@ -14,72 +15,45 @@ class App extends React.Component {
     this.state = {
       userInfo: {
         palette: 1,
-        fullName: "",
-        profession: "",
-        //image: "",
-        emailAddress: "",
-        telephone: "",
-        Linkedin: "",
-        Github: ""
+        name: "",
+        job: "",
+        photo: "",
+        email: "",
+        phone: "",
+        linkedin: "",
+        github: ""
       }
     };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handlePhotoApp = this.handlePhotoApp.bind(this);
   }
-
+  // Change color
   handlePaletteApp(palette) {
-    ///
-    const newUserInfo = {
-      ...this.userInfo,
-      palette: palette
-    };
+    const newUserInfo = { ...this.state.userInfo, palette: palette };
     this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
-
+  // Write input values on card
   handleInputChange(event) {
     const inputValue = event.currentTarget.value;
     const id = event.currentTarget.id;
-    // console.log(inputValue, id);
-    this.setState((prevState, props) => {
-      debugger;
-      const newUser = { ...prevState.userInfo, [id]: inputValue };
-      console.log(newUser);
-      return { userInfo: newUser };
-    });
+    const newUserInfo = { ...this.state.userInfo, [id]: inputValue };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
   }
-  // preview photo
-  /*   handleSubmit(event) {
-    event.preventDefault();
-    this.setState((prevState, props) => {
-      const newUser = {
-        ...prevState.userInfo,
-        image: this.fileInput.current.files[0].name
-      };
-      console.log(newUser);
-      return { userInfo: newUser };
-    }); */
-  //this.setState({ image: this.fileInput.current.files[0].name });
 
-  /*     const handleFile = () => {
-      const imagePreview = fr.result;
-      console.log(fr.result);
-
-      this.setState({
-        image: imagePreview
-      });
-    };
-    const fr = new FileReader();
-    fr.addEventListener("load", handleFile);
-    fr.readAsDataURL(this.fileInput.current.files[0]);
-  } */
+  // Change profile picture
+  handlePhotoApp(photo) {
+    console.log(photo);
+    const newUserInfo = { ...this.state.userInfo, photo: photo };
+    this.setState({ userInfo: newUserInfo }, console.log(this.state));
+  }
 
   render() {
-    // console.log(this.state.userInfo);
     return (
       <div className="app">
-        <div className="viewer__header">{/* me faltan moviisss */}</div>
+        <HeaderApp />
         <section className="section__mediasq">
-          <div className="visor__mediasq">
+          <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
             <Preview userInfo={this.state.userInfo} />
           </div>
           <div className="workSpace">
@@ -88,10 +62,7 @@ class App extends React.Component {
                 <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form
-                  action={this.handleInputChange}
-                  userInfo={this.state.userInfo}
-                />
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
                 <Share />

@@ -1,7 +1,7 @@
 import React from "react";
 import awesomeLogo from "../images/awesome.svg";
 
-const Header = () => {
+const HeaderLanding = () => {
   return (
     <header className="header">
       <img src={awesomeLogo} alt="" className="header__img" />
@@ -30,4 +30,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderLanding;
