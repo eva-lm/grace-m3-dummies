@@ -71,7 +71,7 @@ class App extends React.Component {
       <div className="app">
         <HeaderApp />
         <section className="section__mediasq">
-          <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
+          <div className="visor__mediasq">
             <Preview
               // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
               userInfo={this.state.userInfo}
