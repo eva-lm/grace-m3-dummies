@@ -11,7 +11,7 @@ import Collapsible from "./Collapsible";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.resetState = {
       userInfo: {
         palette: 1,
         fullName: "",
@@ -20,9 +20,12 @@ class App extends React.Component {
         emailAddress: "",
         telephone: "",
         Linkedin: "",
-        Github: ""
-      }
-    };
+        Github: "",
+      }}
+    this.state = {
+      userInfo: {...this.resetState}
+    }
+
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
