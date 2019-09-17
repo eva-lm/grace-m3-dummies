@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ENDPOINT = "https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/";
 
 const Api = (props) => {
@@ -13,7 +11,7 @@ const Api = (props) => {
     .then(function (resp) { return resp.json(); })
     .then(function (result) {
       showResult = () => {
-        console.log("Función de mostrar URL")
+        console.log(result)
       }
     })
     // Función para pintar URL o ERROR

@@ -13,6 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isCardCreated: false,
       userInfo: {
         palette: 1,
         name: "",
@@ -22,11 +23,12 @@ class App extends React.Component {
         phone: "",
         linkedin: "",
         github: ""
-      }
+      },
     };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.getDataFromApi = this.getDataFromApi.bind(this);
     this.fillIconInputs();
   }
   // Change color
@@ -56,13 +58,18 @@ class App extends React.Component {
   }
 
   getDataFromApi(){
-    return <Api props={this.state}/>
+    const {isCardCreated} = this.state.isCardCreated;
+    return 
   }
 
+  //(isCardCreated) ? <Api props={this.state.userInfo}/> : <Loading />
+  //Va en el render
+  
   render() {
     return (
       <div className="app">
         <HeaderApp />
+
         <section className="section__mediasq">
           <div className="visor__mediasbackgroundImage = `url(./assets/images/natalie-portman.jpg)`q">
             <Preview
@@ -79,7 +86,7 @@ class App extends React.Component {
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share getDataFromApi = {this.getDataFromApi}/>
+                <Share getDataFromApi = {this.getDataFromApi} />
               </Collapsible>
             </form>
           </div>
