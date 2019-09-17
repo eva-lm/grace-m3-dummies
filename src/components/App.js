@@ -30,9 +30,10 @@ class App extends React.Component {
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.handleClickReset = this.handleClickReset.bind(this);
     this.fillIconInputs();
   }
-  //resey
+  //reset
   handleClickReset() {
     this.setState({ userInfo: this.resetState });
   }
