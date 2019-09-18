@@ -1,12 +1,16 @@
 import React from "react";
 
-const Item = props => (
-  <div>
-    <label htmlFor={props.name} className="folded__form__label">
-      {props.label}
-    </label>
-    <input value={props.value} placeholder={props.placeholder} id={props.name} type={props.type} name={props.name} className={`folded__form__input ${props.inputClassName}`} maxLength="20" required={props.required} onChange={props.action} />
-  </div>
-);
+const Item = props => {
+  const { name, label, value, placeholder, type, inputClassName, required, action } = props;
+
+  return (
+    <div>
+      <label htmlFor={name} className="folded__form__label">
+        {label}
+      </label>
+      <input value={value} placeholder={placeholder} id={name} type={type} name={name} className={`folded__form__input ${inputClassName}`} maxLength="20" required={required} onChange={action} />
+    </div>
+  );
+};
 
 export default Item;
