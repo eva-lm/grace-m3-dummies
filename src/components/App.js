@@ -61,11 +61,6 @@ class App extends React.Component {
   }
   
   getDataFromApi(){
-    const  cardError  = this.state.cardError;
-    const  cardURL  = this.state.cardURL;
-    const  isCardCreated  = this.state.isCardCreated;
-
-    debugger;
     // Objeto de prueba
      const json = {
       palette: 1,
@@ -80,15 +75,14 @@ class App extends React.Component {
 
     const apiPromise = api(json)
       .then(data => {
+        debugger;
         if(data.success){
            return  this.setState({
-              [cardError]: data.cardError || "Sin errores. Toco correcto",
-              [cardURL]: data.cardURL || "",
+              cardURL: data.cardURL,
             })
             } else {
              return  this.setState({
-                [cardError]: data.cardError || "",
-                [cardURL]: "Ha habido un error",
+                cardError: data.error,
               })
             }
           }
@@ -100,6 +94,7 @@ class App extends React.Component {
   //Va en el render
   
   render() {
+    console.log(this.state)
     return (
       <div className="app">
         <HeaderApp />
