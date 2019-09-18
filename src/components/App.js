@@ -7,8 +7,6 @@ import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
-import ResetButton from "./ResetButton";
-// import userProfile from
 
 class App extends React.Component {
   constructor(props) {
@@ -35,14 +33,17 @@ class App extends React.Component {
     // this.fillIconInputs();
     this.state.userInfo = this.getData();
   }
+
   //reset
   handleClickReset() {
-    this.setState({ userInfo: this.resetState });
+    this.setState({ userInfo: this.resetState.userInfo }, this.saveData);
+    console.log(this.state);
   }
 
   // Change color
   handlePaletteApp(palette) {
     console.log(palette);
+
     const newUserInfo = { ...this.state.userInfo, palette: palette };
     this.setState({ userInfo: newUserInfo }, this.saveData);
   }
@@ -68,16 +69,19 @@ class App extends React.Component {
 
   //LocalStorage
   saveData() {
-    if (this.state.userInfo !== null) {
-      localStorage.setItem("userInfo", JSON.stringify(this.state.userInfo));
-    }
+    localStorage.setItem("userInfo", JSON.stringify(this.state.userInfo));
   }
 
   getData() {
-    return JSON.parse(localStorage.getItem("userInfo"));
+    if (!!JSON.parse(localStorage.getItem("userInfo"))) {
+      return JSON.parse(localStorage.getItem("userInfo"));
+    } else {
+      return this.state.userInfo;
+    }
   }
 
   render() {
+    console.log(this.state.userInfo);
     return (
       <div className="app">
         <HeaderApp />
@@ -95,11 +99,7 @@ class App extends React.Component {
                 <Design handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form
-                  action={this.handleInputChange}
-                  userInfo={this.state.userInfo}
-                  handlePhotoForm={this.handlePhotoApp}
-                />
+                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
                 <Share />
