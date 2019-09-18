@@ -14,9 +14,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardError: "unset",
-      cardURL: "unset",
-      isCardCreated: false,
+      cardError: "",
+      cardURL: "",
+      isCardRendering: false,
       userInfo: {
         palette: 1,
         name: "",
@@ -70,7 +70,7 @@ class App extends React.Component {
       email: "mar.pnieto@gmail.com",
       phone: "6650855445",
       linkedin: "mmprieto",
-      github: "mmprieto",
+      github: "@mmprieto",
       }
 
     const apiPromise = api(json)
@@ -79,9 +79,11 @@ class App extends React.Component {
         if(data.success){
            return  this.setState({
               cardURL: data.cardURL,
+              cardError: ''
             })
             } else {
              return  this.setState({
+               cardURL: '',
                 cardError: data.error,
               })
             }
@@ -94,7 +96,7 @@ class App extends React.Component {
   //Va en el render
   
   render() {
-    console.log(this.state)
+    const {cardError,cardURL,isCardRendering} = this.state;
     return (
       <div className="app">
         <HeaderApp />
@@ -115,7 +117,7 @@ class App extends React.Component {
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share getDataFromApi = {this.getDataFromApi} />
+                <Share getDataFromApi = {this.getDataFromApi} cardError = {cardError} cardURL={cardURL} isCardRendering = {isCardRendering}/>
               </Collapsible>
             </form>
           </div>
