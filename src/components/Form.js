@@ -15,11 +15,9 @@ const Form = props => {
 
       <FileForm handlePhotoFileForm={props.handlePhotoForm} image={photo}></FileForm>
 
-      {/* //POR QUE NO ME CCOGE ULTIMA LETRA DE LOS INpUT?? */}
-
       <Item name="email" type="email" label="Correo electrónico" placeholder="Ej: sally-hill@gmail.com" inputClassName="mail" required="required" value={email} action={props.action}></Item>
 
-      <Item name="phone" type="tel" label="Teléfono electrónico" placeholder="Ej: 555-55-55-55" inputClassName="tel" value={phone} action={props.action}></Item>
+      <Item name="phone" type="tel" label="Teléfono" placeholder="Ej: 555-55-55-55" inputClassName="tel" value={phone} action={props.action}></Item>
 
       <Item name="linkedin" type="text" label="Linkedin" placeholder="Ej: sally-hill" inputClassName="linkedin" required="required" value={linkedin} action={props.action}></Item>
 
