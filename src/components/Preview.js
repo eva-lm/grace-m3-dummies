@@ -1,18 +1,15 @@
 import React from "react";
 import defaultImage from "../images/natalie-portman.jpg";
-import Button from "./Button";
+import ResetButton from "./ResetButton";
 
 const Preview = props => {
   const { palette, name, job, photo } = props.userInfo;
+
   return (
     <section className="viewer">
       <div className="viewer__container-background">
         <div className="viewer__container-buttom-image">
-          {/* ESTO NO SE ESTA PINTANDO */}
-          <Button className="viewer__buttom" id="reset">
-            <i className="far fa-trash-alt"></i>
-            <p className="viewer__buttom-reset">RESET</p>
-          </Button>
+          <ResetButton resetUp={props.resetButton} />
           <div className="viewer__image-container">
             <div className="viewer__image-title">
               <div className={`viewer__image-line-color${palette}`}></div>

@@ -7,7 +7,6 @@ import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
-// import userProfile from
 
 class App extends React.Component {
   constructor(props) {
@@ -28,14 +27,23 @@ class App extends React.Component {
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.handleClickReset = this.handleClickReset.bind(this);
     this.saveData = this.saveData.bind(this);
     this.getData = this.getData.bind(this);
     // this.fillIconInputs();
     this.state.userInfo = this.getData();
   }
+
+  //reset
+  handleClickReset() {
+    this.setState({ userInfo: this.resetState.userInfo }, this.saveData);
+    console.log(this.state);
+  }
+
   // Change color
   handlePaletteApp(palette) {
     console.log(palette);
+
     const newUserInfo = { ...this.state.userInfo, palette: palette };
     this.setState({ userInfo: newUserInfo }, this.saveData);
   }
@@ -65,16 +73,22 @@ class App extends React.Component {
   }
 
   getData() {
-    return JSON.parse(localStorage.getItem("userInfo"));
+    if (!!JSON.parse(localStorage.getItem("userInfo"))) {
+      return JSON.parse(localStorage.getItem("userInfo"));
+    } else {
+      return this.state.userInfo;
+    }
   }
 
   render() {
+    console.log(this.state.userInfo);
     return (
       <div className="app">
         <HeaderApp />
         <section className="section__mediasq">
           <div className="visor__mediasq">
             <Preview
+              resetButton={this.handleClickReset}
               // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
               userInfo={this.state.userInfo}
             />
