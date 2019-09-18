@@ -14,8 +14,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardError: "",
-      cardURL: "",
+      cardError: "unset",
+      cardURL: "unset",
       isCardCreated: false,
       userInfo: {
         palette: 1,
@@ -61,7 +61,12 @@ class App extends React.Component {
   }
   
   getDataFromApi(){
+    const  cardError  = this.state.cardError;
+    const  cardURL  = this.state.cardURL;
+    const  isCardCreated  = this.state.isCardCreated;
+
     debugger;
+    // Objeto de prueba
      const json = {
       palette: 1,
       name: "Mar",
@@ -72,17 +77,24 @@ class App extends React.Component {
       linkedin: "mmprieto",
       github: "mmprieto",
       }
+
     const apiPromise = api(json)
       .then(data => {
-        console.log(data.error);
-        if(!data.sucess){
-          return data.error;
-        } else {
-          return data.cardURL;
-        }
-      });
-    console.log(apiPromise);
-  }
+        if(data.success){
+           return  this.setState({
+              [cardError]: data.cardError || "Sin errores. Toco correcto",
+              [cardURL]: data.cardURL || "",
+            })
+            } else {
+             return  this.setState({
+                [cardError]: data.cardError || "",
+                [cardURL]: "Ha habido un error",
+              })
+            }
+          }
+      )
+          .then(data => console.log(data))
+    }
 
   //(isCardCreated) ? <Api props={this.state.userInfo}/> : <Loading />
   //Va en el render
