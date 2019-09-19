@@ -4,30 +4,24 @@ import React from "react";
 class Share extends React.Component {
   constructor(props) {
     super(props);
-
-
     this.showApiResult = this.showApiResult.bind(this);
   }
-   showApiResult = (props) => {
+
+   showApiResult = () => {
        debugger;
-       if(props.cardURL){
+       if ( this.props.cardURL ) {
          return (
            <div>
             <p className="share__result">
-              <a className="share__result-link" href={props.cardURL} target="_blank" >{props.cardURL}</a>
+              <a className="share__result-link" href={this.props.cardURL} target="_blank" >{this.props.cardURL}</a>
+               <a href={`https://twitter.com/intent/tweet/?text=generate+with+AWESOME+PROFILE+CARDS&url=${this.props.cardURL}`} class="twitterLink js-twitterLink" target="_blank" ></a>
             </p>
-           <a href={`https://twitter.com/intent/tweet/?text=generate+with+AWESOME+PROFILE+CARDS&url=${props.cardURL}`} class="twitterLink js-twitterLink" target="_blank" >
-           <div class="share__button--blue">
-             <i class="fab fa-twitter share__button__icon"></i>
-             <h2 class="share__button--text">Compartir en Twitter</h2>
-           </div>
-           </a>
          </div>
          )
        } else {
           return ( 
             <div>
-              <p className="share__result"> {props.cardError}</p>
+              <p className="share__result"> {this.props.cardError}</p>
             </div>)
          }
        }

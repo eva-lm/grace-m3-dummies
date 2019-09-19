@@ -88,10 +88,11 @@ class App extends React.Component {
     }
   }
   
-  getDataFromApi(){
-    //const json = this.resetState.userInfo;
-    const json = <json/>;
-    // Objeto de prueba
+  getDataFromApi(ev){
+    ev.preventDefault();
+    //Objeto para pasar por la API
+    const json = this.state.userInfo;
+    console.log(json)
     const apiPromise = api(json)
       .then(data => {
         debugger;
@@ -103,7 +104,7 @@ class App extends React.Component {
              } else {
               return  this.setState({
                 cardURL: '',
-                 cardError: data.error,
+                cardError: data.error,
                })
              }
           }
@@ -115,8 +116,8 @@ class App extends React.Component {
   //Va en el render
   
   render() {
-    const { cardError, cardURL, isCardRendering } = this.resetState;
-    console.log(this.resetState)
+    console.log("rendering..." + this.state)
+    const { cardError, cardURL, isCardRendering } = this.state;
     return (
       <div className="app">
         <HeaderApp />
