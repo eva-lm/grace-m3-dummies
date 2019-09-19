@@ -8,7 +8,6 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
 import api from "./api";
-import json from "./testObject";
 // import userProfile from
 
 class Generator extends React.Component {

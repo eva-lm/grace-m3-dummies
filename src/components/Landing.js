@@ -1,5 +1,4 @@
 import React from "react";
-// import logo from "./logo.svg";
 import "../stylesheets/App.scss";
 import HeaderLanding from "./HeaderLanding";
 import Footer from "./Footer";
