@@ -7,11 +7,17 @@ import Form from "./Form";
 import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
+import api from './api';
+import json from './testObject';
+// import userProfile from
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.resetState = {
+      cardError: "",
+      cardURL: "",
+      isCardRendering: false,
       userInfo: {
         palette: 1,
         name: "",
@@ -22,11 +28,13 @@ class App extends React.Component {
         linkedin: "",
         github: ""
       }
-    };
+    }
     this.state = { ...this.resetState };
     this.handlePaletteApp = this.handlePaletteApp.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
+    this.getDataFromApi = this.getDataFromApi.bind(this);
+    //this.fillIconInputs();
     this.handleClickReset = this.handleClickReset.bind(this);
     this.saveData = this.saveData.bind(this);
     this.getData = this.getData.bind(this);
@@ -79,9 +87,37 @@ class App extends React.Component {
       return this.state.userInfo;
     }
   }
+  
+  getDataFromApi(ev){
+    ev.preventDefault();
+    //Objeto para pasar por la API
+    const json = this.state.userInfo;
+    console.log(json)
+    const apiPromise = api(json)
+      .then(data => {
+        debugger;
+         if(data.success){
+            return  this.setState({
+               cardURL: data.cardURL,
+               cardError: ''
+             })
+             } else {
+              return  this.setState({
+                cardURL: '',
+                cardError: data.error,
+               })
+             }
+          }
+      )
+         // .then(data => console.log(data))
+    }
 
+  //(isCardCreated) ? <Api props={this.state.userInfo}/> : <Loading />
+  //Va en el render
+  
   render() {
-    console.log(this.state.userInfo);
+    console.log("rendering..." + this.state)
+    const { cardError, cardURL, isCardRendering } = this.state;
     return (
       <div className="app">
         <HeaderApp />
@@ -102,7 +138,7 @@ class App extends React.Component {
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share />
+                <Share getDataFromApi = {this.getDataFromApi} cardError = {cardError} cardURL={cardURL} isCardRendering = {isCardRendering}/>
               </Collapsible>
             </form>
           </div>
