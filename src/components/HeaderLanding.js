@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import awesomeLogo from "../images/awesome.svg";
-
 const HeaderLanding = () => {
   return (
     <header className="header">
@@ -22,9 +22,9 @@ const HeaderLanding = () => {
         </div>
       </div>
       <button className="header__btn">
-        <a className="header__link" href="algunsitio">
+        <Link className="header__link" to="/genarator">
           comenzar
-        </a>
+        </Link>
       </button>
     </header>
   );
