@@ -8,6 +8,7 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
 import api from './api';
+import json from './testObject';
 // import userProfile from
 
 class App extends React.Component {
@@ -88,24 +89,26 @@ class App extends React.Component {
   }
   
   getDataFromApi(){
+    //const json = this.resetState.userInfo;
+    const json = <json/>;
     // Objeto de prueba
     const apiPromise = api(json)
       .then(data => {
         debugger;
-        if(data.success){
-           return  this.setState({
-              cardURL: data.cardURL,
-              cardError: ''
-            })
-            } else {
-             return  this.setState({
-               cardURL: '',
-                cardError: data.error,
-              })
-            }
+         if(data.success){
+            return  this.setState({
+               cardURL: data.cardURL,
+               cardError: ''
+             })
+             } else {
+              return  this.setState({
+                cardURL: '',
+                 cardError: data.error,
+               })
+             }
           }
       )
-          .then(data => console.log(data))
+         // .then(data => console.log(data))
     }
 
   //(isCardCreated) ? <Api props={this.state.userInfo}/> : <Loading />
@@ -113,10 +116,10 @@ class App extends React.Component {
   
   render() {
     const { cardError, cardURL, isCardRendering } = this.resetState;
+    console.log(this.resetState)
     return (
       <div className="app">
         <HeaderApp />
-
         <section className="section__mediasq">
           <div className="visor__mediasq">
             <Preview
