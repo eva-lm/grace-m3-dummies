@@ -44,7 +44,7 @@ class Generator extends React.Component {
 
   //reset
   handleClickReset() {
-    this.setState({ userInfo: this.resetState.userInfo }, this.saveData);
+    this.this.setState({ userInfo: this.resetState.userInfo }, this.saveData);
     console.log(this.state);
   }
 
@@ -130,13 +130,25 @@ class Generator extends React.Component {
           <div className="workSpace">
             <form id="form">
               <Collapsible name="DISEÑA">
-                <Design palette={this.state.userInfo.palette} handlePaletteDesign={this.handlePaletteApp} />
+                <Design
+                  palette={this.state.userInfo.palette}
+                  handlePaletteDesign={this.handlePaletteApp}
+                />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
+                <Form
+                  action={this.handleInputChange}
+                  userInfo={this.state.userInfo}
+                  handlePhotoForm={this.handlePhotoApp}
+                />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share getDataFromApi={this.getDataFromApi} cardError={cardError} cardURL={cardURL} isCardRendering={isCardRendering} />
+                <Share
+                  getDataFromApi={this.getDataFromApi}
+                  cardError={cardError}
+                  cardURL={cardURL}
+                  isCardRendering={isCardRendering}
+                />
               </Collapsible>
             </form>
           </div>
