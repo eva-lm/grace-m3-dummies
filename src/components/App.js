@@ -132,7 +132,7 @@ class App extends React.Component {
           <div className="workSpace">
             <form id="form">
               <Collapsible name="DISEÑA">
-                <Design handlePaletteDesign={this.handlePaletteApp} />
+                <Design palette={this.state.userInfo.palette} handlePaletteDesign={this.handlePaletteApp} />
               </Collapsible>
               <Collapsible name="RELLENA">
                 <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
