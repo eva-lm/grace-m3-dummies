@@ -13,7 +13,6 @@ class ColorPalette extends React.Component {
     //reconocer el input de ese id y ponerle.checked;
   }
   render() {
-    console.log(this.props.currentValue, this.props.id);
     return (
       <label htmlFor={this.props.for} className="color__box">
         <input type="radio" htmlFor={this.props.for} className="radio_btn" name="design" value={this.props.value} checked onClick={this.handlePalette} />
