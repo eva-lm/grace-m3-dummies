@@ -14,11 +14,7 @@ class FileForm extends React.Component {
     event.preventDefault();
 
     const handleFile = () => {
-      // this.setState({ image: this.fileInput.current.files[0] });
-      // console.log(this.state.image);
-
       const imagePreview = fr.result;
-      console.log(imagePreview);
       this.setState({
         image: imagePreview
       });
