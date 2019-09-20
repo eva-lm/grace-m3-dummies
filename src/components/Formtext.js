@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = props => {
+const FormText = props => {
   const { name, label, value, placeholder, type, inputClassName, required, action } = props;
 
   return (
@@ -13,4 +13,4 @@ const Item = props => {
   );
 };
 
-export default Item;
+export default FormText;

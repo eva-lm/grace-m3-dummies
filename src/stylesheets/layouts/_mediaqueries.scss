@@ -15,7 +15,6 @@
   }
 
   .visor__mediasq {
-    margin-left: 30px;
     background-image: radial-gradient(circle, #f9f4dc, #e2edd9, #d1e3d8, #c5d9d6, #bfcdd0);
     margin-bottom: 80px;
     margin-top: 20px;
@@ -34,4 +33,8 @@
   .visor__mediasq {
     width: 60%;
   }
+}
+
+body {
+  margin: 0;
 }
