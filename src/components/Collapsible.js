@@ -34,7 +34,7 @@ class Collapsible extends React.Component {
 }
 Collapsible.propTypes = {
   name: PropTypes.string,
-  children: PropTypes.string
+  children: PropTypes.object
 };
 
 export default Collapsible;

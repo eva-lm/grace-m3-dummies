@@ -1,5 +1,5 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 class Share extends React.Component {
   constructor(props) {
@@ -74,14 +74,13 @@ class Share extends React.Component {
     );
   }
 }
-// Share.prototype = {
-//   cardURL: PropTypes.string,
-//   cardError: PropTypes.string
-//isCardRendering: PropTypes.func,
-//getDataFromApi: PropTypes.func
-
-//   handlePaletteDesignColors: PropTypes.func,
-//   number: PropTypes.number
-//};
+Share.propType = {
+  cardURL: PropTypes.string,
+  cardError: PropTypes.string,
+  isCardRendering: PropTypes.func,
+  getDataFromApi: PropTypes.func,
+  handlePaletteDesignColors: PropTypes.func,
+  number: PropTypes.number
+};
 
 export default Share;

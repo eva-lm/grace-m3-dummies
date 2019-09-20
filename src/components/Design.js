@@ -65,9 +65,9 @@ const Design = props => {
     </div>
   );
 };
-Design.prototype = {
-  palette: PropTypes.string,
-  handlePaletteDesign: PropTypes.function
+Design.propTypes = {
+  palette: PropTypes.number,
+  handlePaletteDesign: PropTypes.func
 };
 
 export default Design;

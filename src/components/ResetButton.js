@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class ResetButton extends React.Component {
   constructor(props) {
@@ -23,4 +24,8 @@ class ResetButton extends React.Component {
     );
   }
 }
+ResetButton.propTypes = {
+  resetUp: PropTypes.func,
+  handleClickReset: PropTypes.func
+};
 export default ResetButton;

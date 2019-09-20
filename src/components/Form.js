@@ -82,8 +82,18 @@ const Form = props => {
     </div>
   );
 };
+
 Form.prototype = {
-  userInfo: PropTypes.string
+  userInfo: PropTypes.shape({
+    name: PropTypes.string,
+    job: PropTypes.string,
+    photo: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+    action: PropTypes.string
+  })
 };
 
 export default Form;

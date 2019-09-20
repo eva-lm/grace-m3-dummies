@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Button = props => <div className={props.className}></div>;
 
-Button.prototype = {
+Button.propTypes = {
   className: PropTypes.string
 };
 

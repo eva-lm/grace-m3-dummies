@@ -56,8 +56,11 @@ const Preview = props => {
     </section>
   );
 };
-Preview.prototype = {
-  opacity: PropTypes.string
-  //   number: PropTypes.number
+Preview.propType = {
+  opacity: PropTypes.string,
+  palette: PropTypes.string,
+  name: PropTypes.string,
+  job: PropTypes.string,
+  photo: PropTypes.string
 };
 export default Preview;

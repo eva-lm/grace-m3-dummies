@@ -1,5 +1,5 @@
 import React from "react";
-//ya estas las porptypes de form.js
+import PropTypes from "prop-types";
 
 const FormText = props => {
   const {
@@ -31,6 +31,16 @@ const FormText = props => {
       />
     </div>
   );
+};
+FormText.propType = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  inputClassName: PropTypes.string,
+  required: PropTypes.string,
+  action: PropTypes.string
 };
 
 export default FormText;
