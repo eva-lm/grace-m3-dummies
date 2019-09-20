@@ -15,13 +15,13 @@ class Share extends React.Component {
          return (
            <div>
             <p className="share__result">
-              <a className="share__result-link" href={this.props.cardURL} target="_blank" >{this.props.cardURL}</a>
+              <a className="share__result-link" href={this.props.cardURL}>{this.props.cardURL}</a>
               
-              <a href={`https://twitter.com/intent/tweet?text=Created+with+Awesome+Profile+Cards+&url=${this.props.cardURL}`} className="twitterLink js-twitterLink" target="_blank">
+              <button href={`https://twitter.com/intent/tweet?text=Created+with+Awesome+Profile+Cards+&url=${this.props.cardURL}`} className="twitterLink">
               <div className="share__button--blue">
               <i className="fab fa-twitter share__button__icon"></i>
               <h2 className="share__button--text">Compartir en Twitter</h2>
-              </div></a>
+              </div></button>
               </p>
          </div>
          )
