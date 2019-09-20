@@ -1,6 +1,5 @@
 import React from "react";
 
-// id es quien determina el color seleccionado. Exportar id a state.
 class ColorPalette extends React.Component {
   constructor(props) {
     super(props);

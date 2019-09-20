@@ -1,10 +1,9 @@
 import React from "react";
 import "../stylesheets/App.scss";
-import ColorPalette from "./Design_color";
+import ColorPalette from "./ColorPalette";
 
 const Design = props => {
-  console.log(props);
-  return (
+    return (
     <div className="design__form ">
       <h3 className="design__subtitle">COLORES</h3>
       <div className="design__form--items">
