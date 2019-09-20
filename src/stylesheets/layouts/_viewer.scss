@@ -2,7 +2,14 @@
   &__container-background {
     min-width: 320px;
     height: 457px;
-    background-image: radial-gradient(circle, #f9f4dc, #eaedcb, #d7e8be, #bfe3b4, #a2deaf);
+    background-image: radial-gradient(
+      circle,
+      #f9f4dc,
+      #eaedcb,
+      #d7e8be,
+      #bfe3b4,
+      #a2deaf
+    );
 
     display: flex;
     justify-content: center;
@@ -20,18 +27,38 @@
     height: 30px;
     border-radius: 20px;
     border: 1px solid white;
-    background: transparent;
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: all 1s;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   }
+
+  &__buttom:hover {
+    background-color: $dull-orange;
+    border: solid 2px $dull-orange (55, 102, 202);
+    border-radius: 0%;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+  }
+
   &__buttom-reset {
     font-family: $fontMain;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 0px;
     color: $secondary-color;
+
+    cursor: pointer;
+  }
+
+  &__buttom-reset:hover {
+    font-family: $fontMain;
+    font-size: 12px;
+    line-height: 0px;
+    color: white;
+    // cursor: pointer;
   }
 
   &__image-container {
@@ -311,6 +338,12 @@
 .fa-trash-alt {
   font-size: 12px;
   color: $secondary-color;
+  margin-right: 10px;
+}
+
+.fa-trash-alt:hover {
+  font-size: 12px;
+  color: white;
   margin-right: 10px;
 }
 
