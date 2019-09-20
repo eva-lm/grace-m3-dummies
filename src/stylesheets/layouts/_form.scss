@@ -117,3 +117,9 @@
     }
   }
 }
+
+.collapsible {
+  &__icon {
+    align-self: flex-end;
+  }
+}

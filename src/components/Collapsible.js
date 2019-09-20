@@ -23,8 +23,8 @@ class Collapsible extends React.Component {
           <div className="form__box__position">
             <i className="far fa-object-ungroup fa-object-ungroup--design"></i>
             <h2 className="design__title">{this.props.name}</h2>
+          <i className="fas fa-angle-down fa-angle-up--design collapsible-icon"></i>
           </div>
-          <i className="fas fa-angle-down fa-angle-up--design"></i>
         </div>
         <div className="content">{this.props.children}</div>
       </section>

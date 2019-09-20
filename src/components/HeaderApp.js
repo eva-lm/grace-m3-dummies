@@ -2,9 +2,9 @@ import React from "react";
 
 const HeaderApp = props => (
   <header className="viewer__header">
-    <button value="./">
+    <a value="./">
       <div className="viewer__logo"></div>
-    </button>
+    </a>
   </header>
 );
 
