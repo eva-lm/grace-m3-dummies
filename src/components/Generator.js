@@ -8,7 +8,6 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
 import api from "./api";
-import json from "./testObject";
 // import userProfile from
 
 class Generator extends React.Component {
@@ -45,13 +44,10 @@ class Generator extends React.Component {
   //reset
   handleClickReset() {
     this.setState({ userInfo: this.resetState.userInfo }, this.saveData);
-    console.log(this.state);
   }
 
   // Change color
   handlePaletteApp(palette) {
-    console.log(palette);
-
     const newUserInfo = { ...this.state.userInfo, palette: palette };
     this.setState({ userInfo: newUserInfo }, this.saveData);
   }
@@ -65,7 +61,6 @@ class Generator extends React.Component {
 
   // Change profile picture
   handlePhotoApp(photo) {
-    console.log(photo);
     const newUserInfo = { ...this.state.userInfo, photo: photo };
     this.setState({ userInfo: newUserInfo }, this.saveData);
   }
@@ -90,31 +85,31 @@ class Generator extends React.Component {
 
   getDataFromApi(ev) {
     ev.preventDefault();
+    this.setState({
+      isCardRendering: true,
+    })
     //Objeto para pasar por la API
     const json = this.state.userInfo;
-    console.log(json);
-    const apiPromise = api(json).then(data => {
-      debugger;
+    const apiPromise = api(json)
+    .then(data => {
       if (data.success) {
-        return this.setState({
+         this.setState({
           cardURL: data.cardURL,
-          cardError: ""
+          cardError: "",
+          isCardRendering: false,
         });
       } else {
-        return this.setState({
+         this.setState({
           cardURL: "",
-          cardError: data.error
+          cardError: data.error,
+          isCardRendering: false,
         });
       }
     });
-    // .then(data => console.log(data))
   }
 
-  //(isCardCreated) ? <Api props={this.state.userInfo}/> : <Loading />
-  //Va en el render
 
   render() {
-    console.log("rendering..." + this.state);
     const { cardError, cardURL, isCardRendering } = this.state;
     return (
       <div className="app">

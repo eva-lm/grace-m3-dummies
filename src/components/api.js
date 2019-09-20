@@ -11,7 +11,6 @@ const api = data => {
     return resp.json();
   })
   .then( function(result){
-    console.log(result)
     return result;
   }).catch(function(error) {
     console.log(error);
