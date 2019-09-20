@@ -1,6 +1,6 @@
 import React from "react";
 import "../stylesheets/App.scss";
-import ColorPalette from "./Design_color";
+import ColorPalette from "./ColorPalette";
 
 const Design = props => {
   console.log(props);
