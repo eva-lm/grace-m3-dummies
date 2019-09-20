@@ -142,7 +142,6 @@ const twitterLink = document.querySelector(".js-twitterLink");
 const shareMessage = document.querySelector(".js-shareMessage");
 
 function createCard(ev) {
-  debugger;
   ev.preventDefault();
   const userData = {
     palette: palette,

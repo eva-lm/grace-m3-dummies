@@ -94,7 +94,6 @@ class Generator extends React.Component {
     const json = this.state.userInfo;
     console.log(json);
     const apiPromise = api(json).then(data => {
-      debugger;
       if (data.success) {
         return this.setState({
           cardURL: data.cardURL,
@@ -130,13 +129,25 @@ class Generator extends React.Component {
           <div className="workSpace">
             <form id="form">
               <Collapsible name="DISEÑA">
-                <Design palette={this.state.userInfo.palette} handlePaletteDesign={this.handlePaletteApp} />
+                <Design
+                  palette={this.state.userInfo.palette}
+                  handlePaletteDesign={this.handlePaletteApp}
+                />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
+                <Form
+                  action={this.handleInputChange}
+                  userInfo={this.state.userInfo}
+                  handlePhotoForm={this.handlePhotoApp}
+                />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share getDataFromApi={this.getDataFromApi} cardError={cardError} cardURL={cardURL} isCardRendering={isCardRendering} />
+                <Share
+                  getDataFromApi={this.getDataFromApi}
+                  cardError={cardError}
+                  cardURL={cardURL}
+                  isCardRendering={isCardRendering}
+                />
               </Collapsible>
             </form>
           </div>
