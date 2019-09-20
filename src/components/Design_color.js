@@ -7,15 +7,18 @@ class ColorPalette extends React.Component {
     this.handlePalette = this.handlePalette.bind(this);
   }
 
+  checkPalette() {
+    return this.props.currentValue === this.props.id ? true : false;
+  }
+
   handlePalette() {
     this.props.handlePaletteDesignColors(this.props.id);
-
-    //reconocer el input de ese id y ponerle.checked;
   }
+
   render() {
     return (
       <label htmlFor={this.props.for} className="color__box">
-        <input type="radio" htmlFor={this.props.for} className="radio_btn" name="design" value={this.props.value} checked onClick={this.handlePalette} />
+        <input type="radio" htmlFor={this.props.for} className="radio_btn" name="design" value={this.props.value} onChange={this.handlePalette} checked={this.checkPalette()} />
         <div className={`color__one--${this.props.number}`}></div>
         <div className={`color__two--${this.props.number}`}></div>
         <div className={`color__three--${this.props.number}`}></div>
@@ -23,9 +26,5 @@ class ColorPalette extends React.Component {
     );
   }
 }
-
-// ColorPalette.propTypes = {
-//   handlePaletteDesignColors: function
-// }
 
 export default ColorPalette;
