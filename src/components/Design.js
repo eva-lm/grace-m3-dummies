@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../stylesheets/App.scss";
-import ColorPalette from "./Design_color";
+import ColorPalette from "./ColorPalette";
 
 const Design = props => {
-  console.log(props);
   return (
     <div className="design__form ">
       <h3 className="design__subtitle">COLORES</h3>
@@ -17,7 +16,6 @@ const Design = props => {
           currentValue={props.palette}
           handlePaletteDesignColors={props.handlePaletteDesign}
         />
-
         <ColorPalette
           htmlFor="design2"
           value="color2"
@@ -26,7 +24,6 @@ const Design = props => {
           currentValue={props.palette}
           handlePaletteDesignColors={props.handlePaletteDesign}
         />
-
         <ColorPalette
           htmlFor="design3"
           value="color3"
@@ -35,7 +32,6 @@ const Design = props => {
           currentValue={props.palette}
           handlePaletteDesignColors={props.handlePaletteDesign}
         />
-
         <ColorPalette
           htmlFor="design4"
           value="color4"
@@ -44,7 +40,6 @@ const Design = props => {
           currentValue={props.palette}
           handlePaletteDesignColors={props.handlePaletteDesign}
         />
-
         <ColorPalette
           htmlFor="design5"
           value="color5"

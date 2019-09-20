@@ -4,8 +4,7 @@
   flex-direction: column;
   align-items: center;
   border-top: solid 1px $borderLine;
-  bottom: 0;
-  width: 100%;
+
   background-color: white;
 
   @media all and (min-width: $tabletSize) {

@@ -15,11 +15,7 @@ class FileForm extends React.Component {
     event.preventDefault();
 
     const handleFile = () => {
-      // this.setState({ image: this.fileInput.current.files[0] });
-      // console.log(this.state.image);
-
       const imagePreview = fr.result;
-      console.log(imagePreview);
       this.setState({
         image: imagePreview
       });
@@ -38,7 +34,7 @@ class FileForm extends React.Component {
           ref={this.fileInput}
           name="image"
           id="image"
-          /*value={this.props.image} */ className="folded__form__inputFile js__profile-upload-btn"
+          className="folded__form__inputFile js__profile-upload-btn"
           required
           onChange={this.handleSubmit}
         />
@@ -49,7 +45,7 @@ class FileForm extends React.Component {
           Añadir Imagen
         </label>
         <div className="folded__form__input2 js__profile-preview">
-          <img className="profile" src={this.state.image} /* alt="profile" */ />
+          <img className="profile" src={this.props.image} /* alt="profile" */ />
         </div>
       </div>
     );

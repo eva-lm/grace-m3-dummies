@@ -9,7 +9,6 @@ class Share extends React.Component {
   }
 
   showApiResult = () => {
-    debugger;
     if (this.props.cardURL) {
       return (
         <div>
@@ -54,7 +53,6 @@ class Share extends React.Component {
   }
 
   render() {
-    console.log(this.props.isCardRendering);
     return (
       <div className="folded__form js-form">
         <div className="share__button">
