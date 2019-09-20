@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/App.scss";
 
 class Collapsible extends React.Component {
@@ -31,5 +32,9 @@ class Collapsible extends React.Component {
     );
   }
 }
+Collapsible.propTypes = {
+  name: PropTypes.string,
+  children: PropTypes.string
+};
 
 export default Collapsible;

@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Button = props => <div className={props.className}></div>;
-export default Button;
 
-Button.propTypes = {
+Button.prototype = {
   className: PropTypes.string
 };
+
+export default Button;

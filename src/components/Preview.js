@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import defaultImage from "../images/natalie-portman.jpg";
 import ResetButton from "./ResetButton";
 
@@ -14,22 +15,38 @@ const Preview = props => {
             <div className="viewer__image-title">
               <div className={`viewer__image-line-color${palette}`}></div>
               <div className="viewer__image-text">
-                <h2 className={`viewer__image-name-color${palette}`}>{name || "Nombre completo"}</h2>
-                <h3 className={`viewer__image-profession-color${palette}`}>{job || "Front-end developer"}</h3>
+                <h2 className={`viewer__image-name-color${palette}`}>
+                  {name || "Nombre completo"}
+                </h2>
+                <h3 className={`viewer__image-profession-color${palette}`}>
+                  {job || "Front-end developer"}
+                </h3>
               </div>
             </div>
-            <img className="profile viewer__profile-picture js__profile-image" alt="user picture" src={photo || defaultImage} />
+            <img
+              className="profile viewer__profile-picture js__profile-image"
+              alt="user picture"
+              src={photo || defaultImage}
+            />
             <div className="viewer__icons">
-              <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
+              <div
+                className={`viewer__icon-style-color${palette} ${props.opacity}`}
+              >
                 <i className="fas fa-mobile-alt"></i>
               </div>
-              <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
+              <div
+                className={`viewer__icon-style-color${palette} ${props.opacity}`}
+              >
                 <i className="far fa-envelope"></i>
               </div>
-              <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
+              <div
+                className={`viewer__icon-style-color${palette} ${props.opacity}`}
+              >
                 <i className="fab fa-linkedin-in"></i>
               </div>
-              <div className={`viewer__icon-style-color${palette} ${props.opacity}`}>
+              <div
+                className={`viewer__icon-style-color${palette} ${props.opacity}`}
+              >
                 <i className="fab fa-github-alt"></i>
               </div>
             </div>
@@ -39,5 +56,8 @@ const Preview = props => {
     </section>
   );
 };
-
+Preview.prototype = {
+  opacity: PropTypes.string
+  //   number: PropTypes.number
+};
 export default Preview;
