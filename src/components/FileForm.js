@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class FileForm extends React.Component {
   constructor(props) {
@@ -44,10 +45,14 @@ class FileForm extends React.Component {
           Añadir Imagen
         </label>
         <div className="folded__form__input2 js__profile-preview">
-          <img className="profile" src={this.props.image} /* alt="profile" */ />
+          <img className="profile" src={this.props.image} />
         </div>
       </div>
     );
   }
 }
+FileForm.propType = {
+  handlePhotoFileForm: PropTypes.function,
+  image: PropTypes.string
+};
 export default FileForm;

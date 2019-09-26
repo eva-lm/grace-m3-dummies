@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/genarator" component={Generator} />
+        <Route path="/generator" component={Generator} />
       </Switch>
     );
   }

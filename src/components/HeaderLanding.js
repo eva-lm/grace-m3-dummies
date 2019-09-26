@@ -22,7 +22,7 @@ const HeaderLanding = () => {
         </div>
       </div>
       <button className="header__btn">
-        <Link className="header__link" to="/genarator">
+        <Link className="header__link" to="/generator">
           comenzar
         </Link>
       </button>
