@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/App.scss";
 import ColorPalette from "./ColorPalette";
 
 const Design = props => {
-    return (
+  return (
     <div className="design__form ">
       <h3 className="design__subtitle">COLORES</h3>
       <div className="design__form--items">
@@ -58,6 +59,10 @@ const Design = props => {
       </div>
     </div>
   );
+};
+Design.propTypes = {
+  palette: PropTypes.number,
+  handlePaletteDesign: PropTypes.func
 };
 
 export default Design;
