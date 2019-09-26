@@ -86,28 +86,26 @@ class Generator extends React.Component {
   getDataFromApi(ev) {
     ev.preventDefault();
     this.setState({
-      isCardRendering: true,
-    })
+      isCardRendering: true
+    });
     //Objeto para pasar por la API
     const json = this.state.userInfo;
-    const apiPromise = api(json)
-    .then(data => {
+    const apiPromise = api(json).then(data => {
       if (data.success) {
-         this.setState({
+        this.setState({
           cardURL: data.cardURL,
           cardError: "",
-          isCardRendering: false,
+          isCardRendering: false
         });
       } else {
-         this.setState({
+        this.setState({
           cardURL: "",
           cardError: data.error,
-          isCardRendering: false,
+          isCardRendering: false
         });
       }
     });
   }
-
 
   render() {
     const { cardError, cardURL, isCardRendering } = this.state;
@@ -125,13 +123,25 @@ class Generator extends React.Component {
           <div className="workSpace">
             <form id="form">
               <Collapsible name="DISEÑA">
-                <Design palette={this.state.userInfo.palette} handlePaletteDesign={this.handlePaletteApp} />
+                <Design
+                  palette={this.state.userInfo.palette}
+                  handlePaletteDesign={this.handlePaletteApp}
+                />
               </Collapsible>
               <Collapsible name="RELLENA">
-                <Form action={this.handleInputChange} userInfo={this.state.userInfo} handlePhotoForm={this.handlePhotoApp} />
+                <Form
+                  action={this.handleInputChange}
+                  userInfo={this.state.userInfo}
+                  handlePhotoForm={this.handlePhotoApp}
+                />
               </Collapsible>
               <Collapsible name="COMPARTE">
-                <Share getDataFromApi={this.getDataFromApi} cardError={cardError} cardURL={cardURL} isCardRendering={isCardRendering} />
+                <Share
+                  getDataFromApi={this.getDataFromApi}
+                  cardError={cardError}
+                  cardURL={cardURL}
+                  isCardRendering={isCardRendering}
+                />
               </Collapsible>
             </form>
           </div>
