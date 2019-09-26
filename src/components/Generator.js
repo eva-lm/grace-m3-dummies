@@ -8,7 +8,6 @@ import Share from "./Share";
 import Collapsible from "./Collapsible";
 import HeaderApp from "./HeaderApp";
 import api from "./api";
-// import userProfile from
 
 class Generator extends React.Component {
   constructor(props) {
@@ -33,11 +32,9 @@ class Generator extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePhotoApp = this.handlePhotoApp.bind(this);
     this.getDataFromApi = this.getDataFromApi.bind(this);
-    //this.fillIconInputs();
     this.handleClickReset = this.handleClickReset.bind(this);
     this.saveData = this.saveData.bind(this);
     this.getData = this.getData.bind(this);
-    // this.fillIconInputs();
     this.state.userInfo = this.getData();
   }
 
@@ -65,10 +62,6 @@ class Generator extends React.Component {
     this.setState({ userInfo: newUserInfo }, this.saveData);
   }
 
-  //Opacity card icons
-  // fillIconInputs(id) {
-  //   return !!this.state.userInfo[id] ? "" : "clear";
-  // }
 
   //LocalStorage
   saveData() {
@@ -88,7 +81,6 @@ class Generator extends React.Component {
     this.setState({
       isCardRendering: true
     });
-    //Objeto para pasar por la API
     const json = this.state.userInfo;
     const apiPromise = api(json).then(data => {
       if (data.success) {
@@ -116,7 +108,6 @@ class Generator extends React.Component {
           <div className="visor__mediasq">
             <Preview
               resetButton={this.handleClickReset}
-              // que parametro le paso??¿?¿? opacity={this.fillIconInputs()}
               userInfo={this.state.userInfo}
             />
           </div>

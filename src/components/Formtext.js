@@ -10,13 +10,14 @@ const FormText = props => {
     type,
     inputClassName,
     required,
-    action
+    action,
+    asterik
   } = props;
 
   return (
     <div>
       <label htmlFor={name} className="folded__form__label">
-        {label}
+        {label}<span className="asterik">{asterik}</span>
       </label>
       <input
         value={value}
@@ -25,7 +26,6 @@ const FormText = props => {
         type={type}
         name={name}
         className={`folded__form__input ${inputClassName}`}
-        maxLength="20"
         required={required}
         onChange={action}
       />

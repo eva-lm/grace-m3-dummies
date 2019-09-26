@@ -45,7 +45,7 @@ class FileForm extends React.Component {
           Añadir Imagen
         </label>
         <div className="folded__form__input2 js__profile-preview">
-          <img className="profile" src={this.props.image} /* alt="profile" */ />
+          <img className="profile" src={this.props.image} />
         </div>
       </div>
     );

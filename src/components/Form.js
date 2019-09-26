@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import FormText from "./Formtext";
 import FileForm from "./FileForm";
+
 const Form = props => {
   const { name, job, photo, email, phone, linkedin, github } = props.userInfo;
   return (
@@ -9,12 +10,13 @@ const Form = props => {
       <FormText
         name="name"
         type="text"
-        label="Nombre completo"
+        label="Nombre completo "
         placeholder="Ej: Sally Jill"
         inputClassName="inputName"
         required="required"
         value={name}
         action={props.action}
+        asterik="*"
       ></FormText>
 
       <FormText
@@ -26,10 +28,11 @@ const Form = props => {
         required="required"
         value={job}
         action={props.action}
+        asterik="*"
       ></FormText>
 
       <label htmlFor="image" className="folded__form__label">
-        Imagen de perfil
+        Imagen de perfil <span className="asterik">*</span>
       </label>
 
       <FileForm
@@ -46,6 +49,7 @@ const Form = props => {
         required="required"
         value={email}
         action={props.action}
+        asterik="*"
       ></FormText>
 
       <FormText
@@ -67,6 +71,7 @@ const Form = props => {
         required="required"
         value={linkedin}
         action={props.action}
+        asterik="*"
       ></FormText>
 
       <FormText
@@ -78,6 +83,7 @@ const Form = props => {
         required="required"
         value={github}
         action={props.action}
+        asterik="*"
       ></FormText>
     </div>
   );
