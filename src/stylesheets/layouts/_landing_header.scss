@@ -94,7 +94,7 @@
 
   &__btn {
     width: 129px;
-    height: 42px;
+    height: 35px;
     background-color: $dirty-blue;
     border-radius: 21px;
     margin-bottom: 30px;
@@ -112,5 +112,6 @@
     font-size: 16px;
     font-family: $fontMain;
     font-weight: 600;
+    padding: 15px;
   }
 }
